@@ -6,9 +6,12 @@ public class platformerMovement : MonoBehaviour
     private GameObject player;
     private LayerMask groundLayer;
     private Rigidbody2D myRigidbody;
-    private float jumpForce = 200f;
+    private float jumpForce = 5f;
     private float playerSpeed = 3f;
     private Sprite sideView;
+    public bool isD;
+    public bool isA;
+
 
     private void Start()
     {
@@ -57,12 +60,16 @@ public class platformerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 90);
             transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
             GetComponent<SpriteRenderer>().sprite = sideView;
+            isD = true;
+            isA = false;
         }
         if (Input.GetKey("a"))//Press up arrow key to move backward on the X AXIS
         {
             transform.rotation = Quaternion.Euler(0, 0, 270);
             transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
             GetComponent<SpriteRenderer>().sprite = sideView;
+            isA = true;
+            isD = false;
         }
 
 
@@ -70,7 +77,7 @@ public class platformerMovement : MonoBehaviour
         {
            if (isGrounded())
             {
-                myRigidbody.AddForce(new Vector2(0, jumpForce));
+                myRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 
             }
 

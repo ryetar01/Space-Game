@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class switchPlayerMode : MonoBehaviour {
 
-    public GameObject player;
+    private GameObject player;
     //public bool teleportPlayer;
     //public Vector2 teleportPos;
     
     // Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        player = GameObject.Find("Player");
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 
 	}
 

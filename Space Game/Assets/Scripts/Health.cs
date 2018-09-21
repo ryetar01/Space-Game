@@ -16,7 +16,7 @@ public class health : MonoBehaviour {
     {
         if (myHealthBar.value <= 0)
         {
-            Debug.Log("character dead lol, dab XD");
+            //when he dies...
         }
     }
 

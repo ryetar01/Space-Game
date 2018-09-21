@@ -282,7 +282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203abd3fcf29e9b4bad3dbd749a4f033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1402730561}
 --- !u!61 &1217274965
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -524,6 +523,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00cfe309628a8f54cb728a55da58e9c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isD: 0
+  isA: 0
 --- !u!1 &1402730561
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +555,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe86d1c3986195b49b28fbc778320076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isW: 0
+  isS: 0
+  isA: 0
+  isD: 0
 --- !u!212 &1402730563
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1174,7 +1179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd2114ad63d616a47a548168ea272177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 1088363093}
+  flinchForce: 5
 --- !u!61 &1984698119
 BoxCollider2D:
   m_ObjectHideFlags: 0

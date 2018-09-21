@@ -23,6 +23,7 @@ public class switchPlayerMode : MonoBehaviour {
             player.GetComponent<Rigidbody2D>().gravityScale = 0;
             Destroy(player.GetComponent<platformerMovement>());
             player.AddComponent<topdownMovement>();
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             Debug.Log("Worked Again?");
             return;
         }

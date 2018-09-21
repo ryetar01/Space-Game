@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Health : MonoBehaviour {
+public class health : MonoBehaviour {
 
     public Slider myHealthBar;
 
@@ -14,22 +14,16 @@ public class Health : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (myHealthBar.value <= 0)
         {
-
-            myHealthBar.value += 1;
-
-        }
-
-
-
-
-
-
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            myHealthBar.value -= 1;
+            Debug.Log("character dead lol, dab XD");
         }
     }
+
+    public void gotHit()
+    {
+        myHealthBar.value -= 30;
+    }
+
+
 }

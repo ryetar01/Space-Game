@@ -3,12 +3,21 @@ using System.Collections;
 
 public class topdownMovement : MonoBehaviour
 {
-    public Sprite faceView;
-    public Sprite sideView;
-    public Sprite backView;
+    private Sprite faceView;
+    private Sprite sideView;
+    private Sprite backView;
 
     //Inspector Variables
-    public int playerSpeed = 10; //speed player moves 
+    private float playerSpeed = 3; //speed player moves 
+
+    private void Start()
+    {
+        faceView = Resources.Load<Sprite>("Sprites/Front_Placeholder");
+        sideView = Resources.Load<Sprite>("Sprites/Side_Back_Placeholder");
+        backView = Resources.Load<Sprite>("Sprites/Side_Back_Placeholder");
+
+
+    }
     void Update()
     {
         moveForward(); // Player Movement

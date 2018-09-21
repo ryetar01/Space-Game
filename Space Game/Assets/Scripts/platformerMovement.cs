@@ -3,14 +3,19 @@ using System.Collections;
 
 public class platformerMovement : MonoBehaviour
 {
-
-    public LayerMask groundLayer;
-    public Rigidbody2D myRigidbody;
-    public float jumpForce;
+    private GameObject player;
+    private LayerMask groundLayer;
+    private Rigidbody2D myRigidbody;
+    private float jumpForce = 200f;
+    private float playerSpeed = 3f;
+    private Sprite sideView;
 
     private void Start()
     {
-
+        sideView = Resources.Load<Sprite>("Sprites/Side_Back_Placeholder");
+        groundLayer = LayerMask.GetMask("Ground");
+        myRigidbody = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player");
     }
 
     private bool isGrounded()
@@ -30,16 +35,15 @@ public class platformerMovement : MonoBehaviour
         //Checking to see if any come up on ground and if so can jump
         if (hit.collider != null || hit2.collider != null || hit3.collider != null)
         {
-            Debug.Log("activated");
             return true;
         }
 
-        Debug.Log("didnt work");
         return false;
     }
 
+
     //Inspector Variables
-    public int playerSpeed = 10; //speed player moves 
+    //speed player moves 
     void Update()
     {
         moveForward(); // Player Movement
@@ -52,23 +56,24 @@ public class platformerMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, 90);
             transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
+            GetComponent<SpriteRenderer>().sprite = sideView;
         }
         if (Input.GetKey("a"))//Press up arrow key to move backward on the X AXIS
         {
             transform.rotation = Quaternion.Euler(0, 0, 270);
             transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
+            GetComponent<SpriteRenderer>().sprite = sideView;
         }
 
 
         if (Input.GetKeyDown("space"))
         {
-            Debug.Log("input worked");
-            if (isGrounded())
+           if (isGrounded())
             {
-                Debug.Log("worked too");
                 myRigidbody.AddForce(new Vector2(0, jumpForce));
 
             }
+
         }
 
     }

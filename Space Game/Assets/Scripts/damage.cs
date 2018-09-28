@@ -8,6 +8,8 @@ public class damage : MonoBehaviour
     private GameObject player;
     private Rigidbody2D playerRigidbody;
     public int flinchForce;
+    public bool isFlinching = false;
+
 
     // Use this for initialization
     void Start()
@@ -20,15 +22,17 @@ public class damage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     IEnumerator flinch(float a, float b)
     {
-        playerRigidbody.AddForce(new Vector2(a, b), ForceMode2D.Impulse);
+       playerRigidbody.AddForce(new Vector2(a, b), ForceMode2D.Impulse);
+        float oldDrag = playerRigidbody.drag;
+        playerRigidbody.drag = 0.9f;
+        isFlinching = true;
         yield return new WaitForSeconds(0.175f);
-        Debug.Log("did pause");
-        playerRigidbody.AddForce(new Vector2(-a, -b), ForceMode2D.Impulse);
+        playerRigidbody.drag = oldDrag;
+        playerRigidbody.velocity = Vector2.zero;
 
     }
 
@@ -41,7 +45,6 @@ public class damage : MonoBehaviour
             //checking for if the player is using platformer
             if (player.GetComponent<platformerMovement>() != null)
             {
-                Debug.Log("using platformer");
                 //checking player direction
                 if (player.GetComponent<platformerMovement>().isA == true)
                 {
@@ -56,7 +59,6 @@ public class damage : MonoBehaviour
             //checking for if the player is using topdown
             if (player.GetComponent<topdownMovement>() != null)
             {
-                Debug.Log("using topdown");
                 //checking player direction
                 if (player.GetComponent<topdownMovement>().isW)
                 {

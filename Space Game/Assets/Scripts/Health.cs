@@ -22,7 +22,7 @@ public class health : MonoBehaviour {
 
     public void gotHit()
     {
-        myHealthBar.value -= 30;
+        myHealthBar.value -= 5;
     }
 
 

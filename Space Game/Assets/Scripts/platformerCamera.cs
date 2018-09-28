@@ -14,6 +14,7 @@ public class platformerCamera : MonoBehaviour {
     // Use this for initialization
     void Start () {
         player = GameObject.Find("Player");
+        yOffset = 1;
     }
 
     // Update is called once per frame

@@ -28,9 +28,9 @@ public class platformerCamera : MonoBehaviour {
             //Vector3 offset = player.transform.position.x - transform.position.x;
 
 
-            if (playerDistanceFromCamera > 5 || playerDistanceFromCamera < -5)
+            if (playerDistanceFromCamera > 8 || playerDistanceFromCamera < -8)
             {
-                transform.position = new Vector3(player.transform.position.x, player.transform.position.y + yOffset, -10);
+                transform.position = new Vector3(player.transform.position.x, transform.position.y /*yOffset*/, -10);
                 /*if(player.GetComponent<Rigidbody2D>().IsSleeping()) 
                 {
                     

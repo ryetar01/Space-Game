@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class platformerCamera : MonoBehaviour {
 
-    /*what needs to be done: need to start tracking the player once a or d is pressed and once they move a certain
-      amount until they stop in which the camera will stop and fin*/
-
     private Vector3 playerXYcameraZ;
     private GameObject player;
-    public float playerDistanceFromCamera;
+    public float playerDistanceFromCameraX;
+    public float playerDistanceFromCameraY;
     public int yOffset;
     public int xOffset;
     public float panSpeed;
     public int cameraTransitionOffsetX;
     public int cameraTransitionOffsetY;
     public bool correctMode = false;
+    public bool correctMode2 = false;
+
 
     //for the purpose of using the player transform once he activates the if statement
     private Vector3 frozenPlayerTransform;
@@ -37,25 +37,40 @@ public class platformerCamera : MonoBehaviour {
 
         if(player.GetComponent<platformerMovement>().isA || player.GetComponent<platformerMovement>().isD)
         {
-            playerDistanceFromCamera = player.transform.position.x - transform.position.x + cameraTransitionOffsetX;
-            //Vector3 offset = player.transform.position.x - transform.position.x;
+            playerDistanceFromCameraX = player.transform.position.x - transform.position.x + cameraTransitionOffsetX;
+            playerDistanceFromCameraY = player.transform.position.y - transform.position.y + cameraTransitionOffsetY;
 
             if (correctMode)
             {
                 frozenPlayerTransform = player.transform.position;
                 playerXYcameraZ = new Vector3(frozenPlayerTransform.x + cameraTransitionOffsetX, frozenPlayerTransform.y + cameraTransitionOffsetY, transform.position.z);
                 transform.position = Vector3.Lerp(transform.position, playerXYcameraZ, 0.1f);
-                if (Mathf.Abs(playerDistanceFromCamera) < 0.2f)
+                if (Mathf.Abs(playerDistanceFromCameraX) < 0.2f)
                 {
                     correctMode = false;
                 }
 
-            } else if  (playerDistanceFromCamera > 8 || playerDistanceFromCamera < -5)
+            } else if  (playerDistanceFromCameraX > 8 || playerDistanceFromCameraX < -5)
             {
                 correctMode = true;
-                //transform.position = new Vector3(player.transform.position.x - xOffset, transform.position.y /*yOffset*/, -10);
+            }
+
+            if (correctMode2)
+            {
+                frozenPlayerTransform = player.transform.position;
+                playerXYcameraZ = new Vector3(frozenPlayerTransform.x + cameraTransitionOffsetX, frozenPlayerTransform.y + cameraTransitionOffsetY, transform.position.z);
+                transform.position = Vector3.Lerp(transform.position, playerXYcameraZ, 0.05f);
+                if (Mathf.Abs(playerDistanceFromCameraY) < 0.2f)
+                {
+                    correctMode2 = false;
+                }
 
             }
+            else if (playerDistanceFromCameraY > 4 || playerDistanceFromCameraY < -1)
+            {
+                correctMode2 = true;
+            }
+
 
         }
 

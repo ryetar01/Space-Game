@@ -14,10 +14,9 @@ public class health : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (myHealthBar.value <= 0)
+        /*if (myHealthBar.value <= 0)
         {
-            //when he dies...
-        }
+        }*/
     }
 
     public void gotHit()

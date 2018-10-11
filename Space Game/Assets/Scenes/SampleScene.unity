@@ -999,6 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04624d63a9b772d488a2612c6e5a0bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myHealthBar: {fileID: 0}
 --- !u!4 &1088363095
 Transform:
   m_ObjectHideFlags: 0
@@ -1795,13 +1796,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb773768b678faa448608a9a8b71f74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDistanceFromCamera: 0
+  playerDistanceFromCameraX: 0
+  playerDistanceFromCameraY: 0
   yOffset: 1
   xOffset: 0
   panSpeed: 0
   cameraTransitionOffsetX: 0
   cameraTransitionOffsetY: 0
   correctMode: 0
+  correctMode2: 0
 --- !u!54 &1414033400
 Rigidbody:
   m_ObjectHideFlags: 0

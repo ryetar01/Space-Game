@@ -40,7 +40,7 @@ public class damage : MonoBehaviour
     {
         if (collision.gameObject == player)
         {
-            healthBar.GetComponent<health>().gotHit();
+            healthBar.GetComponent<Health>().GotHit();
 
             //checking for if the player is using platformer
             if (player.GetComponent<platformerMovement>() != null)

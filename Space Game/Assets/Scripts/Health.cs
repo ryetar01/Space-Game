@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class health : MonoBehaviour {
+using UnityEngine.SceneManagement;
+public class Health : MonoBehaviour {
 
     public Slider myHealthBar;
 
@@ -14,14 +15,17 @@ public class health : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        /*if (myHealthBar.value <= 0)
+        if(myHealthBar.value == 0)
         {
-        }*/
-    }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
-    public void gotHit()
+    }
+   
+
+    public void GotHit()
     {
-        myHealthBar.value -= 5;
+        myHealthBar.value -= 100;
     }
 
 

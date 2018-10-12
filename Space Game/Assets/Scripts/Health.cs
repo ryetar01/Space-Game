@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,11 +14,9 @@ public class health : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.R))
+        /*if (myHealthBar.value <= 0)
         {
-            Scene thisScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(thisScene.name);
-        }
+        }*/
     }
 
     public void gotHit()

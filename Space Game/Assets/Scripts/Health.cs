@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour {
 
     public Slider myHealthBar;
-    public int damageOutOf100;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +25,7 @@ public class Health : MonoBehaviour {
 
     public void GotHit()
     {
-        myHealthBar.value -= damageOutOf100;
+        myHealthBar.value -= 25;
     }
 
 

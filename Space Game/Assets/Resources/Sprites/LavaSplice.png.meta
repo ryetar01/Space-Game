@@ -2,9 +2,10 @@ fileFormatVersion: 2
 guid: c7076df20cbb9a1459450da927fbf651
 TextureImporter:
   fileIDToRecycleName:
-    21300000: LavaSplice_1
-    21300002: LavaSplice_2
-    21300004: LavaSplice_0
+    21300000: LavaSplice_0
+    21300002: LavaSplice_1
+    21300004: LavaSplice_2
+    21300006: LavaSplice_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -45,7 +46,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -90,18 +91,18 @@ TextureImporter:
       name: LavaSplice_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 2
+        y: 18
         width: 24
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bd165295b72a524d8cf8c3d6ae26a1a
+      spriteID: 0ade198376a940f4d80482d6d3b9dfd8
       vertices: []
       indices: 
       edges: []
@@ -110,18 +111,58 @@ TextureImporter:
       name: LavaSplice_1
       rect:
         serializedVersion: 2
-        x: 26
-        y: 0
+        x: 28
+        y: 18
         width: 24
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fd38050d99f0b94f9e2af58bd0751a9
+      spriteID: 465ee6a4ec8c4ee4b865c33911bfd813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LavaSplice_2
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 1
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d65c5dde35df6498a837c9215d146e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LavaSplice_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 478e33baffd013c4a8595202be506966
       vertices: []
       indices: 
       edges: []
@@ -129,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0e3def8e12682fa4680caba7b1a6845c
+    spriteID: 46c3f5c5c31ce8e459b443720c13d059
     vertices: []
     indices: 
     edges: []

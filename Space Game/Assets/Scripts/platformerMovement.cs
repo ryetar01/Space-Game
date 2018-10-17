@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 public class platformerMovement : MonoBehaviour
 {
-    private GameObject player;
+    public GameObject player;
     private LayerMask groundLayer;
     private Rigidbody2D myRigidbody;
     private float jumpForce = 15f;

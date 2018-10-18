@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour {
 
     public Slider myHealthBar;
+    private CanvasGroup screenDarkness;
 
 	// Use this for initialization
 	void Start () {
         myHealthBar.value = 100;
+        //screenDarkness = GameObject.Find("blackScreen");
+        FadeIn();
 	}
 
     // Update is called once per frame
@@ -27,5 +30,10 @@ public class Health : MonoBehaviour {
         myHealthBar.value -= damage;
     }
 
+    public void FadeIn()
+    {
+       // blackScreen.GetComponent<CanvasGroup>().alpha = 1;
+
+    }
 
 }

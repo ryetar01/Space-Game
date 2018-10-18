@@ -11,16 +11,16 @@ public class Health : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         myHealthBar.value = 100;
-        //screenDarkness = GameObject.Find("blackScreen");
-        FadeIn();
-	}
+        screenDarkness = GameObject.Find("blackScreen").GetComponent<CanvasGroup>();
+        StartCoroutine(FadeIn());
+    }
 
     // Update is called once per frame
     void Update()
     {
         if(myHealthBar.value == 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(Death());
         }
 
     }
@@ -30,10 +30,26 @@ public class Health : MonoBehaviour {
         myHealthBar.value -= damage;
     }
 
-    public void FadeIn()
+    IEnumerator Death()
     {
-       // blackScreen.GetComponent<CanvasGroup>().alpha = 1;
+        while (screenDarkness.alpha < 1)
+        {
+            screenDarkness.alpha += Time.deltaTime;
+            yield return null;
+        }
+        StartCoroutine(FadeIn());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
+
+    IEnumerator FadeIn()
+    {
+       screenDarkness.alpha = 1;
+        while (screenDarkness.alpha > 0)
+        {                   
+            screenDarkness.alpha -= Time.deltaTime;  
+            yield return null;
+        }
     }
 
 }

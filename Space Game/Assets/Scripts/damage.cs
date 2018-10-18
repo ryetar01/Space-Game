@@ -9,6 +9,7 @@ public class damage : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     public int flinchForce;
     public bool isFlinching = false;
+    public int enemyDamage;
 
 
     // Use this for initialization
@@ -40,7 +41,7 @@ public class damage : MonoBehaviour
     {
         if (collision.gameObject == player)
         {
-            healthBar.GetComponent<Health>().GotHit();
+            healthBar.GetComponent<Health>().GotHit(enemyDamage);
 
             //checking for if the player is using platformer
             if (player.GetComponent<platformerMovement>() != null)

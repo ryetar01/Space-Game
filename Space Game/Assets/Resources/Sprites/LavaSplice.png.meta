@@ -4,8 +4,8 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: LavaSplice_0
     21300002: LavaSplice_1
-    21300004: LavaSplice_2
-    21300006: LavaSplice_3
+    21300004: LavaSplice_3
+    21300006: LavaSplice_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -96,7 +96,7 @@ TextureImporter:
         width: 24
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -116,7 +116,7 @@ TextureImporter:
         width: 24
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -128,7 +128,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LavaSplice_2
+      name: LavaSplice_3
       rect:
         serializedVersion: 2
         x: 28
@@ -136,7 +136,7 @@ TextureImporter:
         width: 24
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -148,7 +148,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LavaSplice_3
+      name: LavaSplice_2
       rect:
         serializedVersion: 2
         x: 2
@@ -156,7 +156,7 @@ TextureImporter:
         width: 24
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

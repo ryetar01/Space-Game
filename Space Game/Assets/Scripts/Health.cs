@@ -23,9 +23,8 @@ public class Health : MonoBehaviour {
     }
    
 
-    public void GotHit()
-    {
-        myHealthBar.value -= 25;
+    public void GotHit(int damage)   {
+        myHealthBar.value -= damage;
     }
 
 

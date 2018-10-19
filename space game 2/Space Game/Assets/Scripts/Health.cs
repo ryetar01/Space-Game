@@ -11,7 +11,7 @@ public class Health : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         myHealthBar.value = 100;
-        screenDarkness = GameObject.Find("blackScreen").GetComponent<CanvasGroup>();
+        //screenDarkness = GameObject.Find("blackScreen").GetComponent<CanvasGroup>();
         StartCoroutine(FadeIn());
     }
 
@@ -46,8 +46,8 @@ public class Health : MonoBehaviour {
     IEnumerator FadeIn()
     {
         Time.timeScale = 1;
-        screenDarkness.alpha = 1;
-        while (screenDarkness.alpha > 0)
+        //screenDarkness.alpha = 1;
+        while (false )//screenDarkness.alpha > 0)
         {                   
             screenDarkness.alpha -= Time.deltaTime;  
             yield return null;

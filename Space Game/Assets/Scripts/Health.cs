@@ -34,7 +34,8 @@ public class Health : MonoBehaviour {
     {
         while (screenDarkness.alpha < 1)
         {
-            screenDarkness.alpha += Time.deltaTime;
+            screenDarkness.alpha += Time.deltaTime * 0.1f;
+            Time.timeScale = 0.25f;
             yield return null;
         }
         StartCoroutine(FadeIn());
@@ -44,7 +45,8 @@ public class Health : MonoBehaviour {
 
     IEnumerator FadeIn()
     {
-       screenDarkness.alpha = 1;
+        Time.timeScale = 1;
+        screenDarkness.alpha = 1;
         while (screenDarkness.alpha > 0)
         {                   
             screenDarkness.alpha -= Time.deltaTime;  

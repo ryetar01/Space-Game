@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 9039e0b01e41f9648afce3387a46eb50
+guid: 8590648c0e5b05c4db56338649adc992
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ThunderGate_0
-    21300002: ThunderGate_1
-    21300004: ThunderGate_2
-    21300006: ThunderGate_3
-    21300008: ThunderGate_4
-    21300010: ThunderGate_5
+    21300000: Bong Splooce_0
+    21300002: Bong Splooce_1
+    21300004: Bong Splooce_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -48,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -66,7 +63,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -77,7 +74,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -90,121 +87,61 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ThunderGate_0
+      name: Bong Splooce_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 64
-        width: 16
-        height: 64
+        x: 2
+        y: 25
+        width: 24
+        height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee8012cefc7d3e44a962e016a582b8fd
+      spriteID: 671ebb94089854141a7892082ed4dd3d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ThunderGate_1
+      name: Bong Splooce_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 64
-        width: 16
-        height: 64
+        x: 31
+        y: 25
+        width: 24
+        height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c56bd7f8b5cdcda45b625184354acb3f
+      spriteID: bddb89ef2ffdef04ab25b6092953b8d8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ThunderGate_2
+      name: Bong Splooce_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 64
-        width: 16
-        height: 64
+        x: 2
+        y: 5
+        width: 24
+        height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7baaa2f4554e34419bde3057c41d9f2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ThunderGate_3
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 16
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e32887a10d0bdc1409c24c63a32a8944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ThunderGate_4
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 0
-        width: 17
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf12d4a4728057942976121892f36f56
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ThunderGate_5
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 0
-        width: 16
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 990a4dd0e59c7664484aac649d468d99
+      spriteID: 4cc5a20c484fc1546844c175963e0f26
       vertices: []
       indices: 
       edges: []
@@ -212,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: bf521660ff05fa94c8e097607897b027
+    spriteID: 63cc65f238c8c654682d71c79b8ce03e
     vertices: []
     indices: 
     edges: []

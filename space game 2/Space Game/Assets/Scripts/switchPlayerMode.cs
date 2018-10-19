@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class switchPlayerMode : MonoBehaviour {
 
     private GameObject player;
+    public float xTelePos;
+    public float yTelePos;
+    private CanvasGroup screenDarkness;
+
+
     //public bool teleportPlayer;
     //public Vector2 teleportPos;
-    
+
     // Use this for initialization
-	void Start () {
+    void Start () {
         player = GameObject.Find("Player");
+        screenDarkness = GameObject.Find("blackScreen").GetComponent<CanvasGroup>();
 
     }
 
@@ -41,5 +49,37 @@ public class switchPlayerMode : MonoBehaviour {
             }
         }
 
+        if (collision.gameObject.name == "Player")
+        {
+            player.transform.position = new Vector2(xTelePos, yTelePos);
+            StartCoroutine(blackOut());
+
+        }
+
     }
+
+
+    IEnumerator blackOut()
+    {
+        while (screenDarkness.alpha < 1)
+        {
+            screenDarkness.alpha += Time.deltaTime * 0.1f;
+            Time.timeScale = 0.25f;
+            yield return null;
+        }
+        StartCoroutine(blackIn());
+    }
+
+
+    IEnumerator blackIn()
+    {
+        Time.timeScale = 1;
+        screenDarkness.alpha = 1;
+        while (screenDarkness.alpha > 0)
+        {
+            screenDarkness.alpha -= Time.deltaTime;
+            yield return null;
+        }
+    }
+
 }

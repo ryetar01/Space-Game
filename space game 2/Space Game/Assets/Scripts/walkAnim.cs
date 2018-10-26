@@ -21,6 +21,8 @@ public class walkAnim : MonoBehaviour {
         playerAnimator.SetBool("ifTopdownMoving", false);
         Debug.Log("Platformer: " + playerAnimator.GetLayerIndex("Platformer Layer"));
         Debug.Log("Topdown: " + playerAnimator.GetLayerIndex("Topdown Layer"));
+        playerAnimator.SetLayerWeight(0, 1);
+        playerAnimator.SetLayerWeight(1, 0);
 
     }
 

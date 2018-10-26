@@ -52,6 +52,7 @@ public class switchPlayerMode : MonoBehaviour {
                 playerAnimator.SetLayerWeight(0, 1);
                 playerAnimator.SetLayerWeight(1, 0);
                 player.AddComponent<platformerMovement>();
+                player.transform.rotation = Quaternion.Euler(0, 0, 0);
                 return;
             }
         }

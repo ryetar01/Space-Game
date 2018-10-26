@@ -2684,7 +2684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1217274964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2698,6 +2698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTelePos: 0
   yTelePos: 0
+  playerAnimator: {fileID: 0}
 --- !u!61 &1217274965
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2730,7 +2731,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1217274963}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -1.0198709, z: 0.042217623}
+  m_LocalPosition: {x: -10.57, y: -1.0198709, z: 0.042217623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3392,6 +3393,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 0}
+  isWPressed: 0
+  isSPressed: 0
+  isAPressed: 0
   isDPressed: 0
 --- !u!1 &1414033395
 GameObject:

@@ -2696,9 +2696,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203abd3fcf29e9b4bad3dbd749a4f033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xTelePos: 0
-  yTelePos: 0
   playerAnimator: {fileID: 0}
+  scene: beansLmao
 --- !u!61 &1217274965
 BoxCollider2D:
   m_ObjectHideFlags: 0

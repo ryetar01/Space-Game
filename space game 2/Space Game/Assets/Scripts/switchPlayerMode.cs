@@ -10,6 +10,8 @@ public class switchPlayerMode : MonoBehaviour {
     public float xTelePos;
     public float yTelePos;
     private CanvasGroup screenDarkness;
+    public Animator playerAnimator;
+
 
 
     //public bool teleportPlayer;
@@ -19,6 +21,7 @@ public class switchPlayerMode : MonoBehaviour {
     void Start () {
         player = GameObject.Find("Player");
         screenDarkness = GameObject.Find("blackScreen").GetComponent<CanvasGroup>();
+        playerAnimator = player.GetComponent<Animator>();
 
     }
 
@@ -37,6 +40,8 @@ public class switchPlayerMode : MonoBehaviour {
                 Destroy(player.GetComponent<platformerMovement>());
                 player.AddComponent<topdownMovement>();
                 player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                playerAnimator.SetLayerWeight(0, 0);
+                playerAnimator.SetLayerWeight(1, 1);
                 return;
             }
 
@@ -44,6 +49,8 @@ public class switchPlayerMode : MonoBehaviour {
             {
                 player.GetComponent<Rigidbody2D>().gravityScale = 1;
                 Destroy(player.GetComponent<topdownMovement>());
+                playerAnimator.SetLayerWeight(0, 1);
+                playerAnimator.SetLayerWeight(1, 0);
                 player.AddComponent<platformerMovement>();
                 return;
             }

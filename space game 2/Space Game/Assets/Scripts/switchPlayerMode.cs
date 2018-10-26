@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class switchPlayerMode : MonoBehaviour {
 
     private GameObject player;
-    public float xTelePos;
-    public float yTelePos;
     private CanvasGroup screenDarkness;
     public Animator playerAnimator;
+    public string sceneName;
 
 
 
@@ -42,6 +42,8 @@ public class switchPlayerMode : MonoBehaviour {
                 player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 playerAnimator.SetLayerWeight(0, 0);
                 playerAnimator.SetLayerWeight(1, 1);
+                loadLevel(sceneName);
+                // StartCoroutine(blackOut()); 
                 return;
             }
 
@@ -53,17 +55,19 @@ public class switchPlayerMode : MonoBehaviour {
                 playerAnimator.SetLayerWeight(1, 0);
                 player.AddComponent<platformerMovement>();
                 player.transform.rotation = Quaternion.Euler(0, 0, 0);
+                loadLevel(sceneName);
+                //StartCoroutine(blackOut());
                 return;
             }
         }
 
-        if (collision.gameObject.name == "Player")
-        {
-            player.transform.position = new Vector2(xTelePos, yTelePos);
-            StartCoroutine(blackOut());
+       
 
-        }
+    }
 
+    public void loadLevel(string level)
+    {
+        SceneManager.LoadScene(level);
     }
 
 

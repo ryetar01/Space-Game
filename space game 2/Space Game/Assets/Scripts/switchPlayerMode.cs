@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 public class switchPlayerMode : MonoBehaviour {
 
     private GameObject player;
-    //private CanvasGroup screenDarkness;
     public Animator playerAnimator;
     private GameObject mainCamera;
     public string scene;
@@ -18,7 +17,6 @@ public class switchPlayerMode : MonoBehaviour {
     // Use this for initialization
     void Start () {
         player = GameObject.Find("Player");
-        //screenDarkness = GameObject.Find("blackScreen").GetComponent<CanvasGroup>();
         playerAnimator = player.GetComponent<Animator>();
         mainCamera = GameObject.Find("Main Camera");
     }
@@ -66,28 +64,4 @@ public class switchPlayerMode : MonoBehaviour {
     {
         SceneManager.LoadScene(scene);
     }
-
-    /*   IEnumerator blackOut()
-       {
-           while (screenDarkness.alpha < 1)
-           {
-               screenDarkness.alpha += Time.deltaTime * 0.1f;
-               Time.timeScale = 0.25f;
-               yield return null;
-           }
-           StartCoroutine(blackIn());
-       }
-
-
-       IEnumerator blackIn()
-       {
-           Time.timeScale = 1;
-           screenDarkness.alpha = 1;
-           while (screenDarkness.alpha > 0)
-           {
-               screenDarkness.alpha -= Time.deltaTime;
-               yield return null;
-           }
-       }
-   */
 }

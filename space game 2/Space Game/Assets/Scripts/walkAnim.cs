@@ -12,7 +12,6 @@ public class walkAnim : MonoBehaviour {
     public bool isDPressed = false;
 
 
-
     // Use this for initialization
     void Start () {
         player = GameObject.Find("Player");
@@ -21,13 +20,22 @@ public class walkAnim : MonoBehaviour {
         playerAnimator.SetBool("ifTopdownMoving", false);
         Debug.Log("Platformer: " + playerAnimator.GetLayerIndex("Platformer Layer"));
         Debug.Log("Topdown: " + playerAnimator.GetLayerIndex("Topdown Layer"));
-        playerAnimator.SetLayerWeight(0, 1);
-        playerAnimator.SetLayerWeight(1, 0);
 
     }
 
     // Update is called once per frame
     void Update () {
+        if (player.GetComponent<platformerMovement>() != null)
+        {
+            playerAnimator.SetLayerWeight(0, 1);
+            playerAnimator.SetLayerWeight(1, 0);
+            return;
+        }
+        else
+        {
+           playerAnimator.SetLayerWeight(0, 0);
+            playerAnimator.SetLayerWeight(1, 1);
+        }
 
         //tracks while the key is pressed unlike the key tracking with flinch, will be useful for other scripts
         if (Input.GetKey("w"))

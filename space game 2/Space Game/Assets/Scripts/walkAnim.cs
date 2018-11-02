@@ -18,18 +18,17 @@ public class walkAnim : MonoBehaviour {
         playerAnimator = player.GetComponent<Animator>();
         playerAnimator.SetBool("ifPlatformerMoving", false);
         playerAnimator.SetBool("ifTopdownMoving", false);
-        Debug.Log("Platformer: " + playerAnimator.GetLayerIndex("Platformer Layer"));
-        Debug.Log("Topdown: " + playerAnimator.GetLayerIndex("Topdown Layer"));
+        //Debug.Log("Platformer: " + playerAnimator.GetLayerIndex("Platformer Layer"));
+        //Debug.Log("Topdown: " + playerAnimator.GetLayerIndex("Topdown Layer"));
 
     }
 
     // Update is called once per frame
     void Update () {
-        if (player.GetComponent<platformerMovement>() != null)
+        if (GetComponent<platformerMovement>() != null)
         {
             playerAnimator.SetLayerWeight(0, 1);
             playerAnimator.SetLayerWeight(1, 0);
-            return;
         }
         else
         {

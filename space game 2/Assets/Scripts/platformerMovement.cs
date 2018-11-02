@@ -56,7 +56,7 @@ public class platformerMovement : MonoBehaviour
     private void moveForward()
     {
 
-        if (Input.GetKey("d"))//Press up arrow key to move forward on the X AXIS
+        if (GetComponent<handleInput>().d == true)//Press up arrow key to move forward on the X AXIS
         {
             transform.Translate(playerSpeed * Time.deltaTime, 0, 0);
             //GetComponent<SpriteRenderer>().sprite = sideView;
@@ -64,7 +64,7 @@ public class platformerMovement : MonoBehaviour
             isA = false;
             GetComponent<SpriteRenderer>().flipX = false;
         }
-        if (Input.GetKey("a"))//Press up arrow key to move backward on the X AXIS
+        if (GetComponent<handleInput>().a == true)//Press up arrow key to move backward on the X AXIS
         {
             transform.Translate(-playerSpeed * Time.deltaTime,0, 0);
             //GetComponent<SpriteRenderer>().sprite = sideView;
@@ -75,11 +75,12 @@ public class platformerMovement : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown("space"))
+        if (GetComponent<handleInput>().space == true)
         {
            if (isGrounded())
             {
                 myRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                GetComponent<handleInput>().space = false;
 
             }
 

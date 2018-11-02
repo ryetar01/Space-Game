@@ -25,11 +25,10 @@ public class walkAnim : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (player.GetComponent<platformerMovement>() != null)
+        if (GetComponent<platformerMovement>())
         {
             playerAnimator.SetLayerWeight(0, 1);
             playerAnimator.SetLayerWeight(1, 0);
-            return;
         }
         else
         {

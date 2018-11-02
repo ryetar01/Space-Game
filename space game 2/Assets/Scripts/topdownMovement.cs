@@ -32,7 +32,7 @@ public class topdownMovement : MonoBehaviour
     private void moveForward()
     {
 
-        if (Input.GetKey("s"))//Press up arrow key to move back on the Y AXIS
+        if (GetComponent<handleInput>().s == true)//Press up arrow key to move back on the Y AXIS
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
             transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
@@ -43,7 +43,7 @@ public class topdownMovement : MonoBehaviour
             isA = false;
             isD = false;
         }
-        if (Input.GetKey("d"))//Press up arrow key to move forward on the X AXIS
+        if (GetComponent<handleInput>().d == true)//Press up arrow key to move forward on the X AXIS
         {
             transform.rotation = Quaternion.Euler(0, 0, 90);
             transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
@@ -53,7 +53,7 @@ public class topdownMovement : MonoBehaviour
             isA = false;
             isS = false;
         }
-        if (Input.GetKey("w"))//Press up arrow key to move forward on the Y AXIS
+        if (GetComponent<handleInput>().w == true)//Press up arrow key to move forward on the Y AXIS
         {
             transform.rotation = Quaternion.Euler(0, 0, 180);
             transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
@@ -63,7 +63,7 @@ public class topdownMovement : MonoBehaviour
             isA = false;
             isS = false;
         }
-        if (Input.GetKey("a"))//Press up arrow key to move back on the X AXIS
+        if (GetComponent<handleInput>().a == true)//Press up arrow key to move back on the X AXIS
         {
             transform.rotation = Quaternion.Euler(0, 0, 270);
             transform.Translate(0, -playerSpeed * Time.deltaTime, 0);

@@ -14,7 +14,7 @@ public class platformerMovement : MonoBehaviour
 
     private void Start()
     {
-       // sideView = Resources.Load<Sprite>("Resources/Sprites/new piskel (2)_0");
+        sideView = Resources.Load<Sprite>("Sprites/ScrollerChad");
         groundLayer = LayerMask.GetMask("Ground");
         myRigidbody = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
@@ -59,7 +59,7 @@ public class platformerMovement : MonoBehaviour
         if (Input.GetKey("d"))//Press up arrow key to move forward on the X AXIS
         {
             transform.Translate(playerSpeed * Time.deltaTime, 0, 0);
-            //GetComponent<SpriteRenderer>().sprite = sideView;
+            GetComponent<SpriteRenderer>().sprite = sideView;
             isD = true;
             isA = false;
             GetComponent<SpriteRenderer>().flipX = false;
@@ -67,7 +67,7 @@ public class platformerMovement : MonoBehaviour
         if (Input.GetKey("a"))//Press up arrow key to move backward on the X AXIS
         {
             transform.Translate(-playerSpeed * Time.deltaTime,0, 0);
-            //GetComponent<SpriteRenderer>().sprite = sideView;
+            GetComponent<SpriteRenderer>().sprite = sideView;
             isA = true;
             isD = false;
             GetComponent<SpriteRenderer>().flipX = true;

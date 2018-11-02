@@ -48,8 +48,8 @@ public class Health : MonoBehaviour {
         Time.timeScale = 1;
         screenDarkness.alpha = 1;
         while (screenDarkness.alpha > 0)
-        {
-            screenDarkness.alpha -= Time.deltaTime;
+        {                   
+            screenDarkness.alpha -= Time.deltaTime;  
             yield return null;
         }
     }

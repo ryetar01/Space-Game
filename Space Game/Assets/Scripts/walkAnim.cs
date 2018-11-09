@@ -3,19 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class walkAnim : MonoBehaviour {
-
-    private GameObject player;
     public Animator playerAnimator;
-    public bool isWPressed = false;
-    public bool isSPressed = false;
-    public bool isAPressed = false;
-    public bool isDPressed = false;
-
+    public Animator player2Animator;
 
     // Use this for initialization
     void Start () {
-        player = GameObject.Find("Player");
-        playerAnimator = player.GetComponent<Animator>();
+        playerAnimator = GetComponent<Animator>();
         playerAnimator.SetBool("ifPlatformerMoving", false);
         playerAnimator.SetBool("ifTopdownMoving", false);
         Debug.Log("Platformer: " + playerAnimator.GetLayerIndex("Platformer Layer"));
@@ -36,44 +29,10 @@ public class walkAnim : MonoBehaviour {
             playerAnimator.SetLayerWeight(1, 1);
         }
 
-        //tracks while the key is pressed unlike the key tracking with flinch, will be useful for other scripts
-        if (Input.GetKey("w"))
-        {
-            isWPressed = true;
-        }
-        if (Input.GetKeyUp("w"))
-        {
-            isWPressed = false;
-        }
-        if (Input.GetKey("s"))
-        {
-            isSPressed = true;
-        }
-        if (Input.GetKeyUp("s"))
-        {
-            isSPressed = false;
-        }
-        if (Input.GetKey("a"))
-        {
-            isAPressed = true;
-        }
-        if (Input.GetKeyUp("a"))
-        {
-            isAPressed = false;
-        }
-        if (Input.GetKey("d"))
-        {
-            isDPressed = true;
-        }
-        if (Input.GetKeyUp("d"))
-        {
-            isDPressed = false;
-        }
-
         //checks if platformer
         if(playerAnimator.GetLayerWeight(0) == 1)
         {
-            if (isAPressed || isDPressed)
+            if (GetComponent<handleInput>().a == true || GetComponent<handleInput>().d == true)
             {
                 playerAnimator.SetBool("ifPlatformerMoving", true);
             }
@@ -86,7 +45,7 @@ public class walkAnim : MonoBehaviour {
         //checks if topdown
         if (playerAnimator.GetLayerWeight(1) == 1)
         {
-            if (isWPressed || isSPressed || isAPressed || isDPressed)
+            if (GetComponent<handleInput>().w == true || GetComponent<handleInput>().s == true || GetComponent<handleInput>().a == true || GetComponent<handleInput>().d == true)
             {
                 playerAnimator.SetBool("ifTopdownMoving", true);
             }

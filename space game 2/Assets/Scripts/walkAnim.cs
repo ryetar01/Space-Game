@@ -11,7 +11,6 @@ public class walkAnim : MonoBehaviour {
     public bool isAPressed = false;
     public bool isDPressed = false;
 
-
     // Use this for initialization
     void Start () {
         player = GameObject.Find("Player");
@@ -86,18 +85,38 @@ public class walkAnim : MonoBehaviour {
         //checks if topdown
         if (playerAnimator.GetLayerWeight(1) == 1)
         {
-            if (isWPressed || isSPressed || isAPressed || isDPressed)
+            if (isWPressed)
             {
-                playerAnimator.SetBool("ifTopdownMoving", true);
+                playerAnimator.SetBool("ifTopdownMovingW", true);
             }
             else
             {
-                playerAnimator.SetBool("ifTopdownMoving", false);
+                playerAnimator.SetBool("ifTopdownMovingW", false);
+            }
+            if (isDPressed)
+            {
+                playerAnimator.SetBool("ifTopdownMovingAD", true);
+            }
+            else
+            {
+                playerAnimator.SetBool("ifTopdownMovingAD", false);
+            }
+            if (isAPressed)
+            {
+                playerAnimator.SetBool("ifTopdownMovingAD", true);
+            }
+            else
+            {
+                playerAnimator.SetBool("ifTopdownMovingAD", false);
+            }
+            if (isSPressed)
+            {
+                playerAnimator.SetBool("ifTopdownMovingS", true);
+            }
+            else
+            {
+                playerAnimator.SetBool("ifTopdownMovingS", false);
             }
         }
-
-
-
-
     }
 }

@@ -1,0 +1,10 @@
+02-11-2018 11:53:58 - going to update MinecraftLauncher.exe using C:/Users/EvanNorzow/Desktop/tmp/tmpLauncher.tmp
+Launcher is definitely closed.
+Backing up previous version of the launcher...
+Previous version has been backed up as MinecraftLauncher.exe.backup.
+Installing new version of the launcher...
+Moved C:/Users/EvanNorzow/Desktop/tmp/tmpLauncher.tmp to MinecraftLauncher.exe successfully.
+Removing backup file MinecraftLauncher.exe.backup
+Error 5, going for attempt 2...
+Removed backup MinecraftLauncher.exe.backup successfully.
+Update succeeded!

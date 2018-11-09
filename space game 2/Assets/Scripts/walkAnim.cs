@@ -69,8 +69,9 @@ public class walkAnim : MonoBehaviour {
             isDPressed = false;
         }
 
+
         //checks if platformer
-        if(playerAnimator.GetLayerWeight(0) == 1)
+        if (playerAnimator.GetLayerWeight(0) == 1)
         {
             if (isAPressed || isDPressed)
             {
@@ -93,7 +94,7 @@ public class walkAnim : MonoBehaviour {
             {
                 playerAnimator.SetBool("ifTopdownMovingW", false);
             }
-            if (isDPressed)
+            if (isAPressed)
             {
                 playerAnimator.SetBool("ifTopdownMovingAD", true);
             }
@@ -101,7 +102,7 @@ public class walkAnim : MonoBehaviour {
             {
                 playerAnimator.SetBool("ifTopdownMovingAD", false);
             }
-            if (isAPressed)
+            if (isDPressed)
             {
                 playerAnimator.SetBool("ifTopdownMovingAD", true);
             }

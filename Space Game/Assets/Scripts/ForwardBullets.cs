@@ -27,8 +27,8 @@ public class ForwardBullets : MonoBehaviour {
     }
     IEnumerator End()
     {
-        //code to play animation
-        yield return new WaitForSeconds(0.1f); //duration of animation
+        animator.SetBool("MCBulletanimswap",true);
+        yield return new WaitForSeconds(0.3f); //duration of animation
         Destroy(this.gameObject);
     }
    

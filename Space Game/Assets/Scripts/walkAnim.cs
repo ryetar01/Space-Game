@@ -9,8 +9,13 @@ public class walkAnim : MonoBehaviour {
     // Use this for initialization
     void Start () {
         playerAnimator = GetComponent<Animator>();
+
+        //the bool that determines whether the player uses the platformer animation layer
         playerAnimator.SetBool("ifPlatformerMoving", false);
+        //the bool that determines whether the player uses the topdown animation layer
         playerAnimator.SetBool("ifTopdownMoving", false);
+
+        //checks what the script needs to identify the layers as
         Debug.Log("Platformer: " + playerAnimator.GetLayerIndex("Platformer Layer"));
         Debug.Log("Topdown: " + playerAnimator.GetLayerIndex("Topdown Layer"));
 
@@ -18,7 +23,8 @@ public class walkAnim : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (GetComponent<platformerMovement>())
+        //setting layer to match platformer animations
+        /*if (GetComponent<platformerMovement>())
         {
             playerAnimator.SetLayerWeight(0, 1);
             playerAnimator.SetLayerWeight(1, 0);
@@ -27,10 +33,10 @@ public class walkAnim : MonoBehaviour {
         {
            playerAnimator.SetLayerWeight(0, 0);
             playerAnimator.SetLayerWeight(1, 1);
-        }
+        }*/
 
         //checks if platformer
-        if(playerAnimator.GetLayerWeight(0) == 1)
+        if(GetComponent<platformerMovement>())
         {
             if (GetComponent<handleInput>().a == true || GetComponent<handleInput>().d == true)
             {
@@ -43,15 +49,39 @@ public class walkAnim : MonoBehaviour {
         }
 
         //checks if topdown
-        if (playerAnimator.GetLayerWeight(1) == 1)
+        if (GetComponent<topdownMovement>())
         {
-            if (GetComponent<handleInput>().w == true || GetComponent<handleInput>().s == true || GetComponent<handleInput>().a == true || GetComponent<handleInput>().d == true)
+            if (GetComponent<handleInput>().w == true)
             {
-                playerAnimator.SetBool("ifTopdownMoving", true);
+                playerAnimator.SetBool("ifTopdownRunW", true);
             }
             else
             {
-                playerAnimator.SetBool("ifTopdownMoving", false);
+                playerAnimator.SetBool("ifTopdownRunW", false);
+            }
+            if (GetComponent<handleInput>().a == true)
+            {
+                playerAnimator.SetBool("ifTopdownRunAD", true);
+            }
+            else if(GetComponent<handleInput>().a == false && GetComponent<handleInput>().d == false)
+            {
+                playerAnimator.SetBool("ifTopdownRunAD", false);
+            }
+            if (GetComponent<handleInput>().d == true)
+            {
+                playerAnimator.SetBool("ifTopdownRunAD", true);
+            }
+            else if (GetComponent<handleInput>().a == false && GetComponent<handleInput>().d == false)
+            {
+                playerAnimator.SetBool("ifTopdownRunAD", false);
+            }
+            if (GetComponent<handleInput>().s == true)
+            {
+                playerAnimator.SetBool("ifTopdownRunS", true);
+            }
+            else
+            {
+                playerAnimator.SetBool("ifTopdownRunS", false);
             }
         }
 

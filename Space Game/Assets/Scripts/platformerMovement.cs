@@ -7,7 +7,7 @@ public class platformerMovement : MonoBehaviour
     private LayerMask groundLayer;
     private Rigidbody2D myRigidbody;
     private float jumpForce = 15f;
-    private float playerSpeed = 3f;
+    private float playerSpeed = 5f;
     private Sprite sideView;
     public bool isD;
     public bool isA;

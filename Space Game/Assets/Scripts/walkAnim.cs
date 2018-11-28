@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class walkAnim : MonoBehaviour {
     public Animator playerAnimator;
-    public Animator player2Animator;
-
     // Use this for initialization
     void Start () {
         playerAnimator = GetComponent<Animator>();
@@ -23,17 +21,6 @@ public class walkAnim : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        //setting layer to match platformer animations
-        /*if (GetComponent<platformerMovement>())
-        {
-            playerAnimator.SetLayerWeight(0, 1);
-            playerAnimator.SetLayerWeight(1, 0);
-        }
-        else
-        {
-           playerAnimator.SetLayerWeight(0, 0);
-            playerAnimator.SetLayerWeight(1, 1);
-        }*/
 
         //checks if platformer
         if(GetComponent<platformerMovement>())

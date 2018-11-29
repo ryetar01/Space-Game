@@ -27,10 +27,14 @@ public class walkAnim : MonoBehaviour {
         {
             if (GetComponent<handleInput>().a == true || GetComponent<handleInput>().d == true)
             {
+                playerAnimator.SetLayerWeight(0, 1);
+                playerAnimator.SetLayerWeight(1, 0);
                 playerAnimator.SetBool("ifPlatformerMoving", true);
             }
             else
             {
+                playerAnimator.SetLayerWeight(0, 0);
+                playerAnimator.SetLayerWeight(1, 1);
                 playerAnimator.SetBool("ifPlatformerMoving", false);
             }
         }

@@ -10,8 +10,6 @@ public class walkAnim : MonoBehaviour {
 
         //the bool that determines whether the player uses the platformer animation layer
         playerAnimator.SetBool("ifPlatformerMoving", false);
-        //the bool that determines whether the player uses the topdown animation layer
-        playerAnimator.SetBool("ifTopdownMoving", false);
 
         //checks what the script needs to identify the layers as
         Debug.Log("Platformer: " + playerAnimator.GetLayerIndex("Platformer Layer"));
@@ -25,18 +23,21 @@ public class walkAnim : MonoBehaviour {
         //checks if platformer
         if(GetComponent<platformerMovement>())
         {
+            playerAnimator.SetLayerWeight(0, 1);
+            playerAnimator.SetLayerWeight(1, 0);
             if (GetComponent<handleInput>().a == true || GetComponent<handleInput>().d == true)
             {
-                playerAnimator.SetLayerWeight(0, 1);
-                playerAnimator.SetLayerWeight(1, 0);
                 playerAnimator.SetBool("ifPlatformerMoving", true);
             }
             else
             {
-                playerAnimator.SetLayerWeight(0, 0);
-                playerAnimator.SetLayerWeight(1, 1);
                 playerAnimator.SetBool("ifPlatformerMoving", false);
             }
+        }
+        else
+        {
+            playerAnimator.SetLayerWeight(0, 0);
+            playerAnimator.SetLayerWeight(1, 1);
         }
 
         //checks if topdown

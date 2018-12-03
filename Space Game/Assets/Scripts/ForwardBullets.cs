@@ -9,6 +9,8 @@ public class ForwardBullets : MonoBehaviour {
     private Animator animator;
     private GameObject player2;
     private GameObject player;
+    public float bulletSpeed;
+
 
     void Awake()
     {
@@ -25,34 +27,17 @@ public class ForwardBullets : MonoBehaviour {
 
     void Update ()
     {
-        transform.Translate(Vector3.right * Time.deltaTime);
-	}
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject == player)
-        {
-            Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-            return;
-        }
-
-        if (collision.gameObject == player2)
-        {
-            Physics2D.IgnoreCollision(player2.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-            return;
-        }
-        StartCoroutine(End());
+        transform.Translate(Vector3.right * Time.deltaTime * bulletSpeed);
     }
 
-    void spawnBullet()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        var bullet = Instantiate(theBullet, transform.position, transform.rotation);
+        if(col.gameObject != player || col.gameObject != player2)
+        {
+            StartCoroutine(End());
+        }
     }
 
-   /* public void OnTriggerEnter2D(Collider2D collision)
-    {
-        StartCoroutine(End());
-    }*/
     IEnumerator End()
     {
         animator.SetBool("MCBulletanimswap",true);

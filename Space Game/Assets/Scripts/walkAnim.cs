@@ -11,10 +11,6 @@ public class walkAnim : MonoBehaviour {
         //the bool that determines whether the player uses the platformer animation layer
         playerAnimator.SetBool("ifPlatformerMoving", false);
 
-        //checks what the script needs to identify the layers as
-        Debug.Log("Platformer: " + playerAnimator.GetLayerIndex("Platformer Layer"));
-        Debug.Log("Topdown: " + playerAnimator.GetLayerIndex("Topdown Layer"));
-
     }
 
     // Update is called once per frame

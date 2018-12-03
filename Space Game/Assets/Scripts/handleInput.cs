@@ -12,11 +12,15 @@ public class handleInput : MonoBehaviour {
     public bool d;
     public float delay;
     private bool wInputUp;
+    public bool isCanShoot;
+    public bool mainPlayer;
+    private Vector2 bulletSpawnPos;
+    private Quaternion rotation;
 
     // Use this for initialization
     void Start () {
-
-	}
+        isCanShoot = true;
+    }
 
     // Update is called once per frame
     void Update()
@@ -57,13 +61,30 @@ public class handleInput : MonoBehaviour {
         {
             StartCoroutine(DUp());
         }
-        if (Input.GetKey("e"))
+
+        if (Input.GetKey("e") && isCanShoot)
         {
-            var bullet = Instantiate(theBullet, transform.position, transform.rotation);
+            if(mainPlayer == true)
+            {
+                if (GetComponent<platformerMovement>().isA)
+                {
+                    rotation = Quaternion.Euler(0, 0, 180);
+                    bulletSpawnPos = new Vector2(transform.position.x - 1, transform.position.y);
+                }
+                else if(GetComponent<platformerMovement>().isD)
+                {
+                    rotation = Quaternion.Euler(0, 0, 0);
+                    bulletSpawnPos = new Vector2(transform.position.x + 1, transform.position.y);
+                }
+                var bullet = Instantiate(theBullet, bulletSpawnPos, rotation);
+                isCanShoot = false;
+                StartCoroutine(shootTimer());
+            }
+
         }
     }
 
-        IEnumerator spacePressed()
+    IEnumerator spacePressed()
     {
         yield return new WaitForSeconds(delay);
         space = true;
@@ -123,5 +144,10 @@ public class handleInput : MonoBehaviour {
     {
         yield return new WaitForSeconds(delay);
         d = false;
+    }
+    IEnumerator shootTimer()
+    {
+        yield return new WaitForSeconds(0.5f);
+        isCanShoot = true;
     }
 }

@@ -7,6 +7,10 @@ public class ForwardBullets : MonoBehaviour {
     public GameObject theBullet;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private GameObject player2;
+    private GameObject player;
+    public float bulletSpeed;
+
 
     void Awake()
     {
@@ -14,17 +18,26 @@ public class ForwardBullets : MonoBehaviour {
         animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        player2 = GameObject.Find("Player2");
+        player = GameObject.Find("Player");
+    }
+
+
     void Update ()
     {
-        transform.Translate(Vector3.right * Time.deltaTime);
-        
-	}
-
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        StartCoroutine(End());
+        transform.Translate(Vector3.right * Time.deltaTime * bulletSpeed);
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject != player || col.gameObject != player2)
+        {
+            StartCoroutine(End());
+        }
+    }
+
     IEnumerator End()
     {
         animator.SetBool("MCBulletanimswap",true);

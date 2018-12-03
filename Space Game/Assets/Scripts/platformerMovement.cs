@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class platformerMovement : MonoBehaviour
 {
     public GameObject player;
+    public GameObject player2;
     private LayerMask groundLayer;
     private Rigidbody2D myRigidbody;
     private float jumpForce = 15f;
@@ -18,34 +19,9 @@ public class platformerMovement : MonoBehaviour
         groundLayer = LayerMask.GetMask("Ground");
         myRigidbody = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
-        
-    }
-
-    private bool isGrounded()
-    {
-        //All 3 player raycasts positions (WILL NEED TO BE ADJUSTED! probably)
-        Vector2 position = new Vector2(player.transform.position.x, player.transform.position.y);
-        Vector2 position2 = new Vector2(player.transform.position.x - 0.325f, player.transform.position.y);
-        Vector2 position3 = new Vector2(player.transform.position.x + 0.325f, player.transform.position.y);
+        player2 = GameObject.Find("Player2");
 
 
-        Vector2 direction = Vector2.down;
-        float distance = 1;  //THIS WILL NEED TO BE ADJUSTED WITH A NEW CHARACTER MODEL!
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
-        RaycastHit2D hit2 = Physics2D.Raycast(position2, direction, distance, groundLayer);
-        RaycastHit2D hit3 = Physics2D.Raycast(position3, direction, distance, groundLayer);
-        Debug.DrawRay(position3, direction, Color.green, groundLayer);
-        Debug.DrawRay(position2, direction, Color.green, groundLayer);
-        Debug.DrawRay(position, direction, Color.green, groundLayer);
-
-
-        //Checking to see if any come up on ground and if so can jump
-        if (hit.collider != null || hit2.collider != null || hit3.collider != null)
-        {
-            return true;
-        }
-
-        return false;
     }
 
 
@@ -80,15 +56,55 @@ public class platformerMovement : MonoBehaviour
 
         if (GetComponent<handleInput>().space == true)
         {
-            if (isGrounded())
+            //Made two different raycast pos so the 2nd player doesnt detect the ground based on the first player
+            //yes it had to be formatted this way, some reason it wouldn't work otherwise
+            if (GetComponent<handleInput>().mainPlayer)
             {
-                Debug.Log("spacePress");
-                myRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-                GetComponent<handleInput>().space = false;
+                //All 3 player raycasts positions (WILL NEED TO BE ADJUSTED! probably)
+                Vector2 position = new Vector2(player.transform.position.x, player.transform.position.y);
+                Vector2 position2 = new Vector2(player.transform.position.x - 0.325f, player.transform.position.y);
+                Vector2 position3 = new Vector2(player.transform.position.x + 0.325f, player.transform.position.y);
 
+                Vector2 direction = Vector2.down;
+                float distance = 1;  //THIS WILL NEED TO BE ADJUSTED WITH A NEW CHARACTER MODEL!
+                RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+                RaycastHit2D hit2 = Physics2D.Raycast(position2, direction, distance, groundLayer);
+                RaycastHit2D hit3 = Physics2D.Raycast(position3, direction, distance, groundLayer);
+                Debug.DrawRay(position3, direction, Color.green, groundLayer);
+                Debug.DrawRay(position2, direction, Color.green, groundLayer);
+                Debug.DrawRay(position, direction, Color.green, groundLayer);
+
+                if (hit.collider != null || hit2.collider != null || hit3.collider != null)
+                {
+                    myRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                    GetComponent<handleInput>().space = false;
+                }
+            }
+            else
+            {
+                //All 3 player raycasts positions (WILL NEED TO BE ADJUSTED! probably)
+                Vector2 position = new Vector2(player2.transform.position.x, player2.transform.position.y);
+                Vector2 position2 = new Vector2(player2.transform.position.x - 0.325f, player2.transform.position.y);
+                Vector2 position3 = new Vector2(player2.transform.position.x + 0.325f, player2.transform.position.y);
+
+                Vector2 direction = Vector2.down;
+                float distance = 1;  //THIS WILL NEED TO BE ADJUSTED WITH A NEW CHARACTER MODEL!
+                RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+                RaycastHit2D hit2 = Physics2D.Raycast(position2, direction, distance, groundLayer);
+                RaycastHit2D hit3 = Physics2D.Raycast(position3, direction, distance, groundLayer);
+                Debug.DrawRay(position3, direction, Color.green, groundLayer);
+                Debug.DrawRay(position2, direction, Color.green, groundLayer);
+                Debug.DrawRay(position, direction, Color.green, groundLayer);
+
+                if (hit.collider != null || hit2.collider != null || hit3.collider != null)
+                {
+                    myRigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                    GetComponent<handleInput>().space = false;
+                }
             }
 
         }
 
     }
+
 }

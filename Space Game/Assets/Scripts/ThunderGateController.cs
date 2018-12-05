@@ -14,7 +14,7 @@ public class ThunderGateController : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-
+        Debug.Log("Yeet");
         StartCoroutine(End());
     }
     IEnumerator End()

@@ -147,7 +147,7 @@ public class handleInput : MonoBehaviour {
     }
     IEnumerator shootTimer()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         isCanShoot = true;
     }
 }

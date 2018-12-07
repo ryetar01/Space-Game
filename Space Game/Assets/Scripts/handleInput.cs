@@ -14,7 +14,7 @@ public class handleInput : MonoBehaviour {
     private bool wInputUp;
     public bool isCanShoot;
     public bool mainPlayer;
-    private Vector2 bulletSpawnPos;
+    public Transform bulletSpawnPos;
     private Quaternion rotation;
 
     // Use this for initialization
@@ -69,14 +69,14 @@ public class handleInput : MonoBehaviour {
                 if (GetComponent<platformerMovement>().isA)
                 {
                     rotation = Quaternion.Euler(0, 0, 180);
-                    bulletSpawnPos = new Vector2(transform.position.x - 1, transform.position.y);
+                    
                 }
                 else if(GetComponent<platformerMovement>().isD)
                 {
                     rotation = Quaternion.Euler(0, 0, 0);
-                    bulletSpawnPos = new Vector2(transform.position.x + 1, transform.position.y);
+                    
                 }
-                var bullet = Instantiate(theBullet, bulletSpawnPos, rotation);
+                //var bullet = Instantiate(theBullet, rotation);
                 isCanShoot = false;
                 StartCoroutine(shootTimer());
             }

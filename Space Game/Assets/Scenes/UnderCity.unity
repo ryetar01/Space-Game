@@ -634,24 +634,7 @@ Prefab:
       propertyPath: m_Name
       value: TopDownPlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 114672176198489384, guid: 8813c1acc0547f548a15350614d95fb4,
-        type: 2}
-      propertyPath: theBullet
-      value: 
-      objectReference: {fileID: 1766395656909682, guid: 1adfa98a0483f5a448ac2191d0a8ee4b,
-        type: 2}
-    - target: {fileID: 114672176198489384, guid: 8813c1acc0547f548a15350614d95fb4,
-        type: 2}
-      propertyPath: delay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672176198489384, guid: 8813c1acc0547f548a15350614d95fb4,
-        type: 2}
-      propertyPath: a
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114338292687872784, guid: 8813c1acc0547f548a15350614d95fb4, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8813c1acc0547f548a15350614d95fb4, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1254491083

@@ -54,7 +54,7 @@ public class ForwardBullets : MonoBehaviour {
     {
         bulletGo = false;
         animator.SetBool("MCBulletanimswap",true);
-        yield return new WaitForSeconds(0.2f); //duration of animation
+        yield return new WaitForSeconds(0.1f); //duration of animation
         Destroy(this.gameObject);
         vorejazz = true;
     }

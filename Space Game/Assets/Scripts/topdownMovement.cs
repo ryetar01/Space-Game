@@ -34,7 +34,7 @@ public class topdownMovement : MonoBehaviour
 
         if (GetComponent<handleInput>().s == true)//Press up arrow key to move back on the Y AXIS
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            //transform.rotation = Quaternion.Euler(0, 0, 0);
             transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
             //playerSpriteRenderer.sprite = new Sprite(faceView);
             GetComponent<SpriteRenderer>().sprite = faceView;
@@ -45,8 +45,9 @@ public class topdownMovement : MonoBehaviour
         }
         if (GetComponent<handleInput>().d == true)//Press up arrow key to move forward on the X AXIS
         {
-            transform.rotation = Quaternion.Euler(0, 0, 90);
-            transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
+            //transform.rotation = Quaternion.Euler(0, 0, 90);
+            transform.Translate(playerSpeed * Time.deltaTime, 0, 0);
+            transform.localScale = new Vector3  (3.5f, 3.5f, 1); 
             GetComponent<SpriteRenderer>().sprite = sideView;
             isD = true;
             isW = false;
@@ -55,8 +56,8 @@ public class topdownMovement : MonoBehaviour
         }
         if (GetComponent<handleInput>().w == true)//Press up arrow key to move forward on the Y AXIS
         {
-            transform.rotation = Quaternion.Euler(0, 0, 180);
-            transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
+            //transform.rotation = Quaternion.Euler(0, 0, 180);
+            transform.Translate(0, playerSpeed * Time.deltaTime, 0);
             GetComponent<SpriteRenderer>().sprite = backView;
             isW = true;
             isD = false;
@@ -65,9 +66,10 @@ public class topdownMovement : MonoBehaviour
         }
         if (GetComponent<handleInput>().a == true)//Press up arrow key to move back on the X AXIS
         {
-            transform.rotation = Quaternion.Euler(0, 0, 270);
-            transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
+            //transform.rotation = Quaternion.Euler(0, 0, 270);
+            transform.Translate(-playerSpeed * Time.deltaTime, 0, 0);
             GetComponent<SpriteRenderer>().sprite = sideView;
+            transform.localScale = new Vector3 (-3.5f, 3.5f, 1);
             isA = true;
             isD = false;
             isW = false;

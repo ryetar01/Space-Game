@@ -16,6 +16,8 @@ public class handleInput : MonoBehaviour {
     public bool mainPlayer;
     private Vector2 bulletSpawnPos;
     private Quaternion rotation;
+    public bool invincTimer;
+
 
     // Use this for initialization
     void Start () {
@@ -25,6 +27,10 @@ public class handleInput : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if(invincTimer == true)
+        {
+            StartCoroutine(invincWait());
+        }
         if (Input.GetKeyDown("space"))
         {
             StartCoroutine(spacePressed());
@@ -149,5 +155,11 @@ public class handleInput : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.3f);
         isCanShoot = true;
+    }
+
+    IEnumerator invincWait()
+    {
+        yield return new WaitForSeconds(1);
+        invincTimer = false;
     }
 }

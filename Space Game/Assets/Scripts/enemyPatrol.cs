@@ -18,7 +18,7 @@ public class enemyPatrol : MonoBehaviour {
 
         if (bigAssRatCollider.GetComponent<secondaryCollider>().hitWall ==  true)
         {
-            Debug.Log("WEEEE");
+            transform.Rotate(-transform.rotation.x, 0, 0);
         }
     }
 

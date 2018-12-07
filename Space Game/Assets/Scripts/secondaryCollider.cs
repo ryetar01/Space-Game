@@ -20,7 +20,7 @@ public class secondaryCollider : MonoBehaviour {
 		
 	}
 
-    void OnCollisionEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject != player || col.gameObject != player2 || col.gameObject != theBullet)
         {

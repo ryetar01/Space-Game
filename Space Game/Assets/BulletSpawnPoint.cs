@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class BulletSpawnPoint : MonoBehaviour {
 
-    public Vector3 offset;
+    public Vector3 offsetright;
     public Space player;
     public GameObject parent;
     public handleInput hi;
+    public Vector3 offsetup;
+    public Vector3 offsetdown;
+    public Vector3 offsetleft;
 
 	void Start () {
-        this.transform.localPosition = offset;
+        this.transform.localPosition = offsetright;
         parent = transform.parent.gameObject;
 	}
 
@@ -20,22 +23,22 @@ public class BulletSpawnPoint : MonoBehaviour {
 
         if (hi.s == true)//Press up arrow key to move back on the Y AXIS
         {
-            transform.RotateAround(new Vector3(0, 0, 1), 90f);
+            transform.SetPositionAndRotation(offsetdown, Quaternion.Euler(new Vector3(0, 0, 180)));
 
         }
         if (hi.d == true)//Press up arrow key to move forward on the X AXIS
         {
-            transform.Rotate(0, 0, 0, Space.World);
+            transform.SetPositionAndRotation(offsetright, Quaternion.Euler(new Vector3(0, 0, 90)));
 
         }
         if (hi.w == true)//Press up arrow key to move forward on the Y AXIS
         {
-            transform.Rotate(0, 0, -90f, Space.World);
+            transform.SetPositionAndRotation(offsetup, Quaternion.Euler(new Vector3(0, 0, 0)));
 
         }
         if (hi.a == true)//Press up arrow key to move back on the X AXIS
         {
-            transform.Rotate(0, 0, 180f, Space.World);
+            transform.SetPositionAndRotation(offsetleft, Quaternion.Euler(new Vector3(0, 0, 270)));
         }
     }
 }

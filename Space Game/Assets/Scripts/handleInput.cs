@@ -17,17 +17,36 @@ public class handleInput : MonoBehaviour {
     public Transform bulletSpawnPos;
     private Quaternion rotation;
     public bool invincTimer;
+    public bool playingPlayer1;
+    public GameObject player;
+    public GameObject player2;
+
 
 
     // Use this for initialization
     void Start () {
         isCanShoot = true;
+        playingPlayer1 = true;
+        player = GameObject.Find("Player");
+        player2 = GameObject.Find("Player2");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(invincTimer == true)
+        if (Input.GetKeyUp("f") && playingPlayer1 == true)
+        {
+            playingPlayer1 = false;
+            player2.GetComponent<handleInput>().delay = 0;
+            player.GetComponent<handleInput>().delay = 1;
+        }
+        else if (Input.GetKeyUp("f") && playingPlayer1 == false)
+        {
+            playingPlayer1 = true;
+            player2.GetComponent<handleInput>().delay = 1;
+            player.GetComponent<handleInput>().delay = 0;
+        }
+        if (invincTimer == true)
         {
             StartCoroutine(invincWait());
         }

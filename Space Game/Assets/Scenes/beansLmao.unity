@@ -510,6 +510,9 @@ MonoBehaviour:
   mainPlayer: 0
   bulletSpawnPos: {fileID: 0}
   invincTimer: 0
+  playingPlayer1: 0
+  player: {fileID: 0}
+  player2: {fileID: 0}
 --- !u!114 &796504208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,6 +528,18 @@ MonoBehaviour:
   isS: 0
   isA: 0
   isD: 0
+--- !u!114 &796504211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 796504202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c09f380b2019f45990fa83577d60ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1 &822253593
 GameObject:
   m_ObjectHideFlags: 0

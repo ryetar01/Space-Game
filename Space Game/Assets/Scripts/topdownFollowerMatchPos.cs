@@ -18,7 +18,7 @@ public class topdownFollowerMatchPos : MonoBehaviour {
     void Update () {
         float step = speed * Time.deltaTime;
 
-        if (player.GetComponent<handleInput>().playingPlayer1)
+        if (player.GetComponent<TDInputHandler>().playingPlayer1)
         {
             if (Input.GetKeyUp("w") || Input.GetKeyUp("s") || Input.GetKeyUp("a") || Input.GetKeyUp("d"))
             {
@@ -30,7 +30,7 @@ public class topdownFollowerMatchPos : MonoBehaviour {
             }
         }
 
-        if (player.GetComponent<handleInput>().playingPlayer1 == false)
+        if (player.GetComponent<TDInputHandler>().playingPlayer1 == false)
         {
             if (Input.GetKeyUp("w") || Input.GetKeyUp("s") || Input.GetKeyUp("a") || Input.GetKeyUp("d"))
             {

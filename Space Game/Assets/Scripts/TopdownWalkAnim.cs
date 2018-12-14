@@ -13,7 +13,7 @@ public class TopdownWalkAnim : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("topdownPlayer");
         player2 = GameObject.Find("Player2");
         playerAnimator = GetComponent<Animator>();
 

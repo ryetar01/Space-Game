@@ -44,7 +44,7 @@ public class ForwardBullets : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject != player || col.gameObject != player2 || col.gameObject != theBullet)
+        if(col.gameObject.tag == "!Player")
         {
             StartCoroutine(End());
         }

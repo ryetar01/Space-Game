@@ -23,22 +23,22 @@ public class BulletSpawnPoint : MonoBehaviour {
 
         if (hi.s == true)//Press up arrow key to move back on the Y AXIS
         {
-            transform.SetPositionAndRotation(offsetdown, Quaternion.Euler(new Vector3(0, 0, 180)));
+            this.transform.SetPositionAndRotation(offsetdown, Quaternion.Euler(new Vector3(0, 0, 180)));
 
         }
         if (hi.d == true)//Press up arrow key to move forward on the X AXIS
         {
-            transform.SetPositionAndRotation(offsetright, Quaternion.Euler(new Vector3(0, 0, 90)));
+            this.transform.SetPositionAndRotation(offsetright, Quaternion.Euler(new Vector3(0, 0, 90)));
 
         }
         if (hi.w == true)//Press up arrow key to move forward on the Y AXIS
         {
-            transform.SetPositionAndRotation(offsetup, Quaternion.Euler(new Vector3(0, 0, 0)));
+            this.transform.SetPositionAndRotation(offsetup, Quaternion.Euler(new Vector3(0, 0, 0)));
 
         }
         if (hi.a == true)//Press up arrow key to move back on the X AXIS
         {
-            transform.SetPositionAndRotation(offsetleft, Quaternion.Euler(new Vector3(0, 0, 270)));
+            this.transform.SetPositionAndRotation(offsetleft, Quaternion.Euler(new Vector3(0, 0, 270)));
         }
     }
 }

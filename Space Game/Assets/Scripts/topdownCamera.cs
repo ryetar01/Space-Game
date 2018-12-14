@@ -18,12 +18,12 @@ public class topdownCamera : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (player.GetComponent<handleInput>().playingPlayer1 == true)
+        if (player.GetComponent<TDInputHandler>().playingPlayer1 == true)
         {
             transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10);
         }
 
-        if (player.GetComponent<handleInput>().playingPlayer1 == false)
+        if (player.GetComponent<TDInputHandler>().playingPlayer1 == false)
         {
             transform.position = new Vector3(player2.transform.position.x, player2.transform.position.y, -10);
         }

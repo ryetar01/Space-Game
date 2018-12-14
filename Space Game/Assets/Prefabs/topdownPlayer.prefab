@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114353050377580768}
   - component: {fileID: 114379888706172634}
   m_Layer: 0
-  m_Name: TopDownPlayer
+  m_Name: topdownPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,6 +185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b11ec232c9ccc7499f82dbd554577bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+=======
+  theBullet: {fileID: 1766395656909682, guid: 1adfa98a0483f5a448ac2191d0a8ee4b, type: 2}
+>>>>>>> 4feab0179327ece52504bef003662dddf88cab62
   w: 0
   s: 0
   a: 0

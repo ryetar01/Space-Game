@@ -153,9 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offsetright: {x: 0.1, y: 0.05, z: 0}
-  player: 0
   parent: {fileID: 1526510535656940}
-  hi: {fileID: 0}
+  hi: {fileID: 114767516997478376}
   offsetup: {x: 0, y: 0.15, z: 0}
   offsetdown: {x: 0, y: -0.15, z: 0}
   offsetleft: {x: -0.1, y: 0.05, z: 0}

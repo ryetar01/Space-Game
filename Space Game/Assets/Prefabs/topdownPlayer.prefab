@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114989672915150016}
   - component: {fileID: 114140328000963572}
   - component: {fileID: 114353050377580768}
+  - component: {fileID: 114379888706172634}
   m_Layer: 0
   m_Name: TopDownPlayer
   m_TagString: Player
@@ -184,20 +185,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b11ec232c9ccc7499f82dbd554577bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theBullet: {fileID: 1766395656909682, guid: 1adfa98a0483f5a448ac2191d0a8ee4b, type: 2}
-  space: 0
   w: 0
   s: 0
   a: 0
   d: 0
   delay: 0
-  isCanShoot: 0
   mainPlayer: 0
-  bulletSpawnPos: {fileID: 4624898484649214}
   invincTimer: 0
-  playingPlayer1: 0
+  playingPlayer1: 1
   player: {fileID: 1127546919608236}
   player2: {fileID: 0}
+--- !u!114 &114379888706172634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1127546919608236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f16ca5b0b323024b8bca443e2de6366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TheBullet: {fileID: 1766395656909682, guid: 1adfa98a0483f5a448ac2191d0a8ee4b, type: 2}
+  BulletSpawnPos: {fileID: 4624898484649214}
 --- !u!114 &114682996877336370
 MonoBehaviour:
   m_ObjectHideFlags: 1

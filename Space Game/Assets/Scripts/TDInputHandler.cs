@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class TDInputHandler : MonoBehaviour {
 
-    public GameObject theBullet;
+   
     public bool w;
     public bool s;
     public bool a;
     public bool d;
     public float delay;
     private bool wInputUp;
-    public bool isCanShoot;
     public bool mainPlayer;
-    public Transform bulletSpawnPos;
-    private Quaternion rotation;
     public bool invincTimer;
     public bool playingPlayer1;
     public GameObject player;
@@ -25,7 +22,7 @@ public class TDInputHandler : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        isCanShoot = true;
+        
         playingPlayer1 = true;
         player = GameObject.Find("Player");
         player2 = GameObject.Find("Player2");
@@ -49,10 +46,6 @@ public class TDInputHandler : MonoBehaviour {
         if (invincTimer == true)
         {
             StartCoroutine(invincWait());
-        }
-        if (Input.GetKeyDown("space"))
-        {
-            StartCoroutine(spacePressed());
         }
         if (Input.GetKey("w"))
         {
@@ -86,34 +79,9 @@ public class TDInputHandler : MonoBehaviour {
         {
             StartCoroutine(DUp());
         }
-
-        if (Input.GetKey("e") && isCanShoot)
-        {
-            if (mainPlayer == true)
-            {
-                if (GetComponent<platformerMovement>().isA)
-                {
-                    rotation = Quaternion.Euler(0, 0, 180);
-
-                }
-                else if (GetComponent<platformerMovement>().isD)
-                {
-                    rotation = Quaternion.Euler(0, 0, 0);
-
-                }
-                //var bullet = Instantiate(theBullet, rotation);
-                isCanShoot = false;
-                StartCoroutine(shootTimer());
-            }
-
-        }
     }
+    
 
-    IEnumerator spacePressed()
-    {
-        yield return new WaitForSeconds(delay);
-        space = true;
-    }
 
     IEnumerator WPressed()
     {
@@ -169,11 +137,6 @@ public class TDInputHandler : MonoBehaviour {
     {
         yield return new WaitForSeconds(delay);
         d = false;
-    }
-    IEnumerator shootTimer()
-    {
-        yield return new WaitForSeconds(0.3f);
-        isCanShoot = true;
     }
 
     IEnumerator invincWait()

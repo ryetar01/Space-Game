@@ -35,46 +35,5 @@ public class walkAnim : MonoBehaviour {
             playerAnimator.SetLayerWeight(0, 0);
             playerAnimator.SetLayerWeight(1, 1);
         }
-
-        //checks if topdown
-        if (GetComponent<topdownMovement>())
-        {
-            if (GetComponent<handleInput>().w == true)
-            {
-                playerAnimator.SetBool("ifTopdownRunW", true);
-            }
-            else
-            {
-                playerAnimator.SetBool("ifTopdownRunW", false);
-            }
-            if (GetComponent<handleInput>().a == true)
-            {
-                playerAnimator.SetBool("ifTopdownRunAD", true);
-            }
-            else if(GetComponent<handleInput>().a == false && GetComponent<handleInput>().d == false)
-            {
-                playerAnimator.SetBool("ifTopdownRunAD", false);
-            }
-            if (GetComponent<handleInput>().d == true)
-            {
-                playerAnimator.SetBool("ifTopdownRunAD", true);
-            }
-            else if (GetComponent<handleInput>().a == false && GetComponent<handleInput>().d == false)
-            {
-                playerAnimator.SetBool("ifTopdownRunAD", false);
-            }
-            if (GetComponent<handleInput>().s == true)
-            {
-                playerAnimator.SetBool("ifTopdownRunS", true);
-            }
-            else
-            {
-                playerAnimator.SetBool("ifTopdownRunS", false);
-            }
-        }
-
-
-
-
     }
 }

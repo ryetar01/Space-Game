@@ -50,10 +50,6 @@ public class TDInputHandler : MonoBehaviour {
         {
             StartCoroutine(invincWait());
         }
-        if (Input.GetKeyDown("space"))
-        {
-            StartCoroutine(spacePressed());
-        }
         if (Input.GetKey("w"))
         {
             StartCoroutine(WPressed());
@@ -107,12 +103,6 @@ public class TDInputHandler : MonoBehaviour {
             }
 
         }
-    }
-
-    IEnumerator spacePressed()
-    {
-        yield return new WaitForSeconds(delay);
-        space = true;
     }
 
     IEnumerator WPressed()

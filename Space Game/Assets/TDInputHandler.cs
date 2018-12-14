@@ -5,7 +5,6 @@ using UnityEngine;
 public class TDInputHandler : MonoBehaviour {
 
     public GameObject theBullet;
-    public bool space;
     public bool w;
     public bool s;
     public bool a;

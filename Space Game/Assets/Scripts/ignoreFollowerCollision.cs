@@ -11,7 +11,7 @@ public class ignoreFollowerCollision : MonoBehaviour {
 	void Start () {
 		player2 = GameObject.Find("Player2");
         player = GameObject.Find("Player");
-        StartCoroutine(matchTransform());
+        StartCoroutine(MatchTransform());
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class ignoreFollowerCollision : MonoBehaviour {
         }
     }
 
-    IEnumerator matchTransform()
+    IEnumerator MatchTransform()
     {
         yield return new WaitForSeconds(0.1f);
         player.transform.position = player2.transform.position;

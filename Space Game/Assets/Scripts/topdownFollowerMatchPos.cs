@@ -20,7 +20,7 @@ public class topdownFollowerMatchPos : MonoBehaviour {
 
         if (player.GetComponent<handleInput>().playingPlayer1)
         {
-            if (player.GetComponent<Rigidbody2D>().IsSleeping)
+            if (Input.GetKeyUp("w") || Input.GetKeyUp("s") || Input.GetKeyUp("a") || Input.GetKeyUp("d"))
             {
                 if (transform.position.x != player.transform.position.x && transform.position.y != player.transform.position.y)
                 {
@@ -41,6 +41,5 @@ public class topdownFollowerMatchPos : MonoBehaviour {
                 }
             }
         }
-
     }
 }

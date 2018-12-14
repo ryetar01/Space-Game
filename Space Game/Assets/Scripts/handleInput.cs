@@ -34,18 +34,6 @@ public class handleInput : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp("f") && playingPlayer1 == true)
-        {
-            playingPlayer1 = false;
-            player2.GetComponent<handleInput>().delay = 0;
-            player.GetComponent<handleInput>().delay = 1;
-        }
-        else if (Input.GetKeyUp("f") && playingPlayer1 == false)
-        {
-            playingPlayer1 = true;
-            player2.GetComponent<handleInput>().delay = 1;
-            player.GetComponent<handleInput>().delay = 0;
-        }
         if (invincTimer == true)
         {
             StartCoroutine(invincWait());

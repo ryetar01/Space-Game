@@ -21,8 +21,7 @@ public class TDInputHandler : MonoBehaviour {
 
     // Use this for initialization
     void Start()
-    {
-        
+    {    
         playingPlayer1 = true;
         player = GameObject.Find("Player");
         player2 = GameObject.Find("Player2");
@@ -34,14 +33,14 @@ public class TDInputHandler : MonoBehaviour {
         if (Input.GetKeyUp("f") && playingPlayer1 == true)
         {
             playingPlayer1 = false;
-            player2.GetComponent<handleInput>().delay = 0;
-            player.GetComponent<handleInput>().delay = 1;
+            player2.GetComponent<TDInputHandler>().delay = 0;
+            player.GetComponent<TDInputHandler>().delay = 1;
         }
         else if (Input.GetKeyUp("f") && playingPlayer1 == false)
         {
             playingPlayer1 = true;
-            player2.GetComponent<handleInput>().delay = 1;
-            player.GetComponent<handleInput>().delay = 0;
+            player2.GetComponent<TDInputHandler>().delay = 1;
+            player.GetComponent<TDInputHandler>().delay = 0;
         }
         if (invincTimer == true)
         {

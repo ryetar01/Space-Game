@@ -5,9 +5,16 @@ using UnityEngine;
 public class TopdownWalkAnim : MonoBehaviour {
 
     public Animator playerAnimator;
+    public GameObject player;
+    public GameObject player2;
+    public bool playingPlayer1;
+
+
     // Use this for initialization
     void Start()
     {
+        player = GameObject.Find("Player");
+        player2 = GameObject.Find("Player2");
         playerAnimator = GetComponent<Animator>();
 
         if (GetComponent<platformerMovement>())

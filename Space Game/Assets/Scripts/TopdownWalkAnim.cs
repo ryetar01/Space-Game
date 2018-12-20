@@ -63,5 +63,17 @@ public class TopdownWalkAnim : MonoBehaviour {
         {
             playerAnimator.SetBool("ifTopdownRunS", false);
         }
+
+
+        if (GetComponent<TDInputHandler>().a && GetComponent<TDInputHandler>().d && GetComponent<TDInputHandler> ().w == false && GetComponent<TDInputHandler>().s == false)
+        {
+           playerAnimator.SetBool("ifTopdownRunAD", false);
+
+        }
+        if (GetComponent<TDInputHandler>().w && GetComponent<TDInputHandler>().s && GetComponent<TDInputHandler>().a == false && GetComponent<TDInputHandler>().d == false)
+        {
+            playerAnimator.SetBool("ifTopdownRunW", false);
+            playerAnimator.SetBool("ifTopdownRunS", false);
+        }
     }
 }

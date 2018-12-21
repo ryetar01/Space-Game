@@ -12,6 +12,14 @@ public class TDBulletSpawner : MonoBehaviour
         if (Input.GetKeyUp("e"))
         {
             Object.Instantiate(TheBullet, BulletSpawnPos);
+            if (TheBullet.transform.rotation.eulerAngles.z == 0)
+                {
+                TheBullet.transform.localScale = new Vector3(1, 1, 1);
+            }
+            if (TheBullet.transform.rotation.eulerAngles.z == 180)
+                {
+                TheBullet.transform.localScale = new Vector3(-1, 1, 1);
+            }
         }
     }
 

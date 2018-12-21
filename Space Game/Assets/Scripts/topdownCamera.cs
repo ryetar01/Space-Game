@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class topdownCamera : MonoBehaviour {
 
-    private GameObject player;
-    private GameObject player2;
+    public GameObject player;
+    public GameObject player2;
 
 
     // Use this for initialization
-    void Start () {
-        player = GameObject.Find("topdownPlayer");
-        player2 = GameObject.Find("Player2");
-
-    }
+    
 
     // Update is called once per frame
     void Update()

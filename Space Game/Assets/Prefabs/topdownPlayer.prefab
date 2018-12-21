@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d405fcb33685f4892c2c1572be8a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TheBullet: {fileID: 1703732094664794, guid: d2ac5fdf2f8fe2948960281bf0248764, type: 2}
   offsetright: {x: 0.5, y: 0.2, z: 0}
   parent: {fileID: 1526510535656940}
   hi: {fileID: 114767516997478376}
@@ -216,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f16ca5b0b323024b8bca443e2de6366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TheBullet: {fileID: 1766395656909682, guid: 1adfa98a0483f5a448ac2191d0a8ee4b, type: 2}
+  TheBullet: {fileID: 1703732094664794, guid: d2ac5fdf2f8fe2948960281bf0248764, type: 2}
   BulletSpawnPos: {fileID: 4751527454625850}
 --- !u!114 &114874499494388984
 MonoBehaviour:

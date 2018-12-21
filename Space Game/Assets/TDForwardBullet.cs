@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ForwardBullets : MonoBehaviour {
+public class TDForwardBullet : MonoBehaviour {
 
     public GameObject theBullet;
     private SpriteRenderer spriteRenderer;
@@ -29,17 +29,17 @@ public class ForwardBullets : MonoBehaviour {
     }
 
 
-    void Update ()
+    void Update()
     {
         this.transform.parent = null;
 
         if (Input.GetKey("e") && vorejazz)
         {
-            
+
             vorejazz = false;
         }
 
-        if(bulletGo == true)
+        if (bulletGo == true)
         {
             transform.Translate(Vector3.right * Time.deltaTime * bulletSpeed);
         }
@@ -58,10 +58,10 @@ public class ForwardBullets : MonoBehaviour {
     IEnumerator End()
     {
         bulletGo = false;
-        animator.SetBool("MCBulletanimswap",true);
+        animator.SetBool("MCBulletanimswap", true);
         yield return new WaitForSeconds(0.1f); //duration of animation
         Destroy(this.gameObject);
         vorejazz = true;
     }
-   
+
 }

@@ -5,17 +5,13 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: TopdownChad_6
+  m_Name: TopdownChadIdle_0
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
-<<<<<<< HEAD
-    m_StateMachine: {fileID: 1107517628677023454}
-=======
-    m_StateMachine: {fileID: 1107417980540708714}
->>>>>>> 9fca63e5ce44aceacacb284b0bff9bd08fb56a45
+    m_StateMachine: {fileID: 1107552782232728476}
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
@@ -25,21 +21,13 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
-<<<<<<< HEAD
---- !u!1102 &1102760517931842690
-=======
---- !u!1102 &1102904579605864718
->>>>>>> 9fca63e5ce44aceacacb284b0bff9bd08fb56a45
+--- !u!1102 &1102433977288657048
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-<<<<<<< HEAD
-  m_Name: ChadTopdownAD run
-=======
-  m_Name: TDchad_runAD
->>>>>>> 9fca63e5ce44aceacacb284b0bff9bd08fb56a45
+  m_Name: TDchad_idleS
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -52,21 +40,13 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-<<<<<<< HEAD
-  m_Motion: {fileID: 7400000, guid: 86d301696edca1044b0d9dd91da70952, type: 2}
-=======
-  m_Motion: {fileID: 7400000, guid: 8e2239dee07736a41aa9ce1b8767bdcd, type: 2}
->>>>>>> 9fca63e5ce44aceacacb284b0bff9bd08fb56a45
+  m_Motion: {fileID: 7400000, guid: caa6e7e3156e39e4698344b082794347, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
-<<<<<<< HEAD
---- !u!1107 &1107517628677023454
-=======
---- !u!1107 &1107417980540708714
->>>>>>> 9fca63e5ce44aceacacb284b0bff9bd08fb56a45
+--- !u!1107 &1107552782232728476
 AnimatorStateMachine:
   serializedVersion: 5
   m_ObjectHideFlags: 1
@@ -75,11 +55,7 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-<<<<<<< HEAD
-    m_State: {fileID: 1102760517931842690}
-=======
-    m_State: {fileID: 1102904579605864718}
->>>>>>> 9fca63e5ce44aceacacb284b0bff9bd08fb56a45
+    m_State: {fileID: 1102433977288657048}
     m_Position: {x: 200, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
@@ -90,8 +66,4 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-<<<<<<< HEAD
-  m_DefaultState: {fileID: 1102760517931842690}
-=======
-  m_DefaultState: {fileID: 1102904579605864718}
->>>>>>> 9fca63e5ce44aceacacb284b0bff9bd08fb56a45
+  m_DefaultState: {fileID: 1102433977288657048}

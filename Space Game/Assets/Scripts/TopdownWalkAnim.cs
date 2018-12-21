@@ -13,7 +13,7 @@ public class TopdownWalkAnim : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("topdownPlayer");
         player2 = GameObject.Find("Player2");
         playerAnimator = GetComponent<Animator>();
 
@@ -61,6 +61,18 @@ public class TopdownWalkAnim : MonoBehaviour {
         }
         else
         {
+            playerAnimator.SetBool("ifTopdownRunS", false);
+        }
+
+
+        if (GetComponent<TDInputHandler>().a && GetComponent<TDInputHandler>().d && GetComponent<TDInputHandler> ().w == false && GetComponent<TDInputHandler>().s == false)
+        {
+           playerAnimator.SetBool("ifTopdownRunAD", false);
+
+        }
+        if (GetComponent<TDInputHandler>().w && GetComponent<TDInputHandler>().s && GetComponent<TDInputHandler>().a == false && GetComponent<TDInputHandler>().d == false)
+        {
+            playerAnimator.SetBool("ifTopdownRunW", false);
             playerAnimator.SetBool("ifTopdownRunS", false);
         }
     }

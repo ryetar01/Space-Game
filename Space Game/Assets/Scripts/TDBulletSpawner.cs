@@ -19,12 +19,10 @@ public class TDBulletSpawner : MonoBehaviour
             Object.Instantiate(TheBullet, BulletSpawnPos);
             if (player.GetComponent<topdownMovement>().isA || player.GetComponent<topdownMovement>().isS)
             {
-                Debug.Log("E");
                 TheBullet.transform.localScale = new Vector3(-1, 1, 1);
             }
             if (player.GetComponent<topdownMovement>().isD || player.GetComponent<topdownMovement>().isW)
             {
-                Debug.Log("D");
                 TheBullet.transform.localScale = new Vector3(1, 1, 1);
             }
             /*if (TheBullet.transform.rotation.eulerAngles.z == 0)

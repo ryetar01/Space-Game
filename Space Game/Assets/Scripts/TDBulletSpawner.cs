@@ -4,22 +4,37 @@ using UnityEngine;
 
 public class TDBulletSpawner : MonoBehaviour
 {
+    private GameObject player;
     public GameObject TheBullet;
     public Transform BulletSpawnPos;
 
+    private void Start()
+    {
+        player = GameObject.Find("topdownPlayer");
+    }
     private void Update()
     {
         if (Input.GetKeyUp("e"))
         {
             Object.Instantiate(TheBullet, BulletSpawnPos);
-            if (TheBullet.transform.rotation.eulerAngles.z == 0)
-                {
-                TheBullet.transform.localScale = new Vector3(1, 1, 1);
-            }
-            if (TheBullet.transform.rotation.eulerAngles.z == 180)
-                {
+            if (player.GetComponent<topdownMovement>().isA || player.GetComponent<topdownMovement>().isS)
+            {
+                Debug.Log("E");
                 TheBullet.transform.localScale = new Vector3(-1, 1, 1);
             }
+            if (player.GetComponent<topdownMovement>().isD || player.GetComponent<topdownMovement>().isW)
+            {
+                Debug.Log("D");
+                TheBullet.transform.localScale = new Vector3(1, 1, 1);
+            }
+            /*if (TheBullet.transform.rotation.eulerAngles.z == 0)
+                {
+                TheBullet.transform.localScale = new Vector3(1, 1, 1);
+            }*/
+            /*if (TheBullet.transform.rotation.eulerAngles.z == 180)
+            {
+                TheBullet.transform.localScale = new Vector3(-1, 1, 1);
+            }*/
         }
     }
 

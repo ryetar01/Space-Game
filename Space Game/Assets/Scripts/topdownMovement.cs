@@ -34,9 +34,7 @@ public class topdownMovement : MonoBehaviour
 
         if (GetComponent<TDInputHandler>().s == true)//Press up arrow key to move back on the Y AXIS
         {
-            //transform.rotation = Quaternion.Euler(0, 0, 0);
             transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
-            //playerSpriteRenderer.sprite = new Sprite(faceView);
             GetComponent<SpriteRenderer>().sprite = faceView;
             isS = true;
             isW = false;

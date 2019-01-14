@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - FriendlyBullet
+  - InactivePlayer
   layers:
   - Default
   - TransparentFX

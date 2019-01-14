@@ -6,6 +6,7 @@ public class bigassrattopdown : MonoBehaviour {
     private bool rat;
     public float enemySpeed;
     private GameObject bigAssRatCollider;
+    public bool hitEnemy;
 	// Use this for initialization
 	void Start () {
      
@@ -17,13 +18,13 @@ public class bigassrattopdown : MonoBehaviour {
 
        if (rat == true)
         {
-            transform.Rotate(0, 0, 70);
+            transform.Rotate(0, 0, Random.Range(90, 270));
             rat = false;
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionEnter2D(Collision2D other)
     {
-            rat = true;
+        rat = true;
     }
 }

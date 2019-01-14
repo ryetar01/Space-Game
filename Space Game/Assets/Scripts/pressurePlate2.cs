@@ -11,7 +11,6 @@ public class pressurePlate2 : MonoBehaviour
     public Sprite plateUp;
     public Sprite plateDown;
     private GameObject player;
-    private GameObject TheBullet;
 
 
     // Start is called before the first frame update
@@ -31,7 +30,9 @@ public class pressurePlate2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject == GameObject.Find("TDMainCharacterBullet(Clone)")){
+        if(other.gameObject == GameObject.Find("TDMainCharacterBullet(Clone)"))
+        {
+            Debug.Log("nani");
             return;
         }
         plate2on = true;

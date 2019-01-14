@@ -48,9 +48,13 @@ public class TDForwardBullet : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
 
-        if (col.gameObject != player || player2)
+        if (col.gameObject != player || col.gameObject != player2)
         {
-
+            if (col.gameObject.CompareTag("Enemy"))
+            {
+                //change this when enemy health becomes a thing
+                Destroy(col.gameObject);
+            }
             StartCoroutine(End());
         }
     }

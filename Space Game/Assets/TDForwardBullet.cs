@@ -12,6 +12,7 @@ public class TDForwardBullet : MonoBehaviour {
     public float bulletSpeed;
     public bool bulletGo;
     public bool vorejazz;
+    public bool shotEnemy;
 
 
     void Awake()
@@ -56,6 +57,11 @@ public class TDForwardBullet : MonoBehaviour {
                 Destroy(col.gameObject);
             }
             StartCoroutine(End());
+        }
+
+        if(col.gameObject == GameObject.FindWithTag("Enemy")){
+            shotEnemy = true;
+            Debug.Log("shot rat");
         }
     }
 

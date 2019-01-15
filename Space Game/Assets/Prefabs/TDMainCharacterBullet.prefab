@@ -167,3 +167,4 @@ MonoBehaviour:
   bulletSpeed: 9
   bulletGo: 0
   vorejazz: 0
+  shotEnemy: 0

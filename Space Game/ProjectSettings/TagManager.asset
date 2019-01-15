@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Bullet
   - FriendlyBullet
+<<<<<<< HEAD
+  - InactivePlayer
+=======
   - Enemy
+>>>>>>> 740c9e32b5cc3863f20c4b1e61e3ed15fccaac1e
   layers:
   - Default
   - TransparentFX

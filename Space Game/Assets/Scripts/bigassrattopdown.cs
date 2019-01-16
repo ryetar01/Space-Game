@@ -3,28 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class bigassrattopdown : MonoBehaviour {
-    private bool rat;
+    private bool hit;
     public float enemySpeed;
-    private GameObject bigAssRatCollider;
     public bool hitEnemy;
 	// Use this for initialization
 	void Start () {
-     
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        transform.Translate(Vector3.up * Time.deltaTime * enemySpeed);
 
-       if (rat == true)
-        {
-            transform.Rotate(0, 0, Random.Range(90, 270));
-            rat = false;
-        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        rat = true;
+        hit = true;
     }
+
+
+    // Update is called once per frame
+    void Update () {
+        transform.parent.Translate(Vector3.up * Time.deltaTime * enemySpeed);
+
+       if (hit == true)
+        {
+            transform.parent.Rotate(0, 0, Random.Range(90, 270));
+            hit = false;
+        }
+    }
+
+
 }

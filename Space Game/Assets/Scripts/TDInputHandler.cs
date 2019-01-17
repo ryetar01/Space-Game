@@ -16,6 +16,7 @@ public class TDInputHandler : MonoBehaviour {
     public bool playingPlayer1;
     public GameObject player;
     public GameObject player2;
+    public bool isCanShoot;
 
 
 
@@ -25,6 +26,7 @@ public class TDInputHandler : MonoBehaviour {
         playingPlayer1 = true;
         player = GameObject.Find("Player");
         player2 = GameObject.Find("Player2");
+        isCanShoot = true;
     }
 
     // Update is called once per frame
@@ -78,8 +80,19 @@ public class TDInputHandler : MonoBehaviour {
         {
             StartCoroutine(DUp());
         }
+        if (Input.GetKey("e") && isCanShoot)
+        {
+            isCanShoot = false;
+            StartCoroutine(shootTimer());
+        }
     }
-    
+
+
+    IEnumerator shootTimer()
+    {
+        yield return new WaitForSeconds(0.3f);
+        isCanShoot = true;
+    }
 
 
     IEnumerator WPressed()

@@ -33,13 +33,13 @@ public class topdownMovement : MonoBehaviour {
     {
         moveForward(); // Player Movement
 
-        float Dist = Vector3.Distance(controlledplayer.position, otherplayer.position);
+        float Dist = Vector3.SqrMagnitude(controlledplayer.position - otherplayer.position);
         
-        if (Dist >= 1.15)
+        if (Dist >= 1.32)
         {
             player2.GetComponent<topdownMovement>().playerSpeed = 3;
         }
-        if (Dist < 1.15)
+        if (Dist < 1.32)
         {
             player2.GetComponent<topdownMovement>().playerSpeed = 2f;
         }

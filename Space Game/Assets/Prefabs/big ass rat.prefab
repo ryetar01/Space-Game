@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 95052787190717240}
   - component: {fileID: 50216171147141336}
   - component: {fileID: 1991550685168913469}
-  - component: {fileID: 842070291069672730}
   m_Layer: 0
   m_Name: big ass rat
   m_TagString: Enemy
@@ -150,18 +149,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.553602, y: 1.9913734}
   m_EdgeRadius: 0
---- !u!114 &842070291069672730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191930697699898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bf711e73ed8b0e45b9157fd916318f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7488903110051136309
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class topdownMovement : MonoBehaviour {
     public GameObject player1;
     public GameObject player2;
     public float Dist;
+    private int CorrectionTimer;
 
     void Start()
     {
@@ -26,12 +27,23 @@ public class topdownMovement : MonoBehaviour {
         player2 = GameObject.FindGameObjectWithTag("InactivePlayer");
         controlledplayer = player1.transform;
         otherplayer = player2.transform;
+        CorrectionTimer = 1;
+    }
 
+    private void Awake()
+    {
+        Countdown();
     }
 
     void Update()
     {
-        moveForward(); // Player Movement
+        MoveForward(); // Player Movement
+
+        if (CorrectionTimer == 0)
+        {
+            CorrectionTimer = 1;
+            Correction();
+        }
 
         float Dist = Vector3.SqrMagnitude(controlledplayer.position - otherplayer.position);
         
@@ -39,13 +51,22 @@ public class topdownMovement : MonoBehaviour {
         {
             player2.GetComponent<topdownMovement>().playerSpeed = 3;
         }
-        if (Dist < 1.32)
+        else
         {
             player2.GetComponent<topdownMovement>().playerSpeed = 2f;
         }
     }
 
-    public void moveForward()
+    public IEnumerator Countdown()
+    {
+        while (true)
+        {
+            CorrectionTimer--;
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+    public void MoveForward()
     {
 
         if (GetComponent<TDInputHandler>().s == true)//Press up arrow key to move back on the Y AXIS
@@ -91,5 +112,8 @@ public class topdownMovement : MonoBehaviour {
         }
 
     }
-
+    public void Correction()
+    {
+        Debug.Log("YaLikeJazz");
+    }
 }

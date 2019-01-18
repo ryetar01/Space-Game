@@ -24,7 +24,7 @@ public class TDInputHandler : MonoBehaviour {
     void Start()
     {    
         playingPlayer1 = true;
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         player2 = GameObject.Find("Player2");
         isCanShoot = true;
     }
@@ -83,14 +83,16 @@ public class TDInputHandler : MonoBehaviour {
         if (Input.GetKey("e") && isCanShoot)
         {
             isCanShoot = false;
-            StartCoroutine(shootTimer());
+            StartCoroutine(ShootTimer());
         }
     }
 
 
-    IEnumerator shootTimer()
+    IEnumerator ShootTimer()
     {
-        yield return new WaitForSeconds(0.3f);
+        Debug.Log("Ienum worked");
+        player.GetComponent<TDBulletSpawner>().Shoot();
+        yield return new WaitForSeconds(0.2f);
         isCanShoot = true;
     }
 

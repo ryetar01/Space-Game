@@ -10,12 +10,27 @@ public class TDBulletSpawner : MonoBehaviour
 
     private void Start()
     {
+<<<<<<< HEAD
         player = GameObject.FindGameObjectWithTag("Player");
+=======
+        player = GameObject.Find("topdownPlayer");
+>>>>>>> 385dea351cc053ed1a1814efc786f1ab9ba0f2aa
     }
     private void Update()
     {
-        if (Input.GetKeyUp("e"))
+    }
+
+    public void Shoot()
+    {
+        Debug.Log("shoot");
+        Object.Instantiate(TheBullet, BulletSpawnPos);
+        if (player.GetComponent<topdownMovement>().isA || player.GetComponent<topdownMovement>().isS)
         {
+            TheBullet.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        if (player.GetComponent<topdownMovement>().isD || player.GetComponent<topdownMovement>().isW)
+        {
+<<<<<<< HEAD
             if (player.GetComponent<TDInputHandler>().isCanShoot)
             {
                 Object.Instantiate(TheBullet, BulletSpawnPos);
@@ -38,6 +53,9 @@ public class TDBulletSpawner : MonoBehaviour
             {
                 TheBullet.transform.localScale = new Vector3(-1, 1, 1);
             }*/
+=======
+            TheBullet.transform.localScale = new Vector3(1, 1, 1);
+>>>>>>> 385dea351cc053ed1a1814efc786f1ab9ba0f2aa
         }
     }
 

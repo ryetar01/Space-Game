@@ -10,7 +10,7 @@ public class TDBulletSpawner : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("topdownPlayer");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
     private void Update()
     {

@@ -13,7 +13,6 @@ public class ForwardBullets : MonoBehaviour {
     public bool bulletGo;
     public bool vorejazz;
 
-
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -48,12 +47,12 @@ public class ForwardBullets : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
 
-        if (col.gameObject != player || player2)
+        if (col.gameObject != player && col.gameObject != player2)
         {
-
             StartCoroutine(End());
         }
     }
+
 
     IEnumerator End()
     {

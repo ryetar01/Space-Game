@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pressurePlate1 : MonoBehaviour
+public class PressurePlate1 : MonoBehaviour
 {
     public GameObject plate1;
     public GameObject plate2;
     public bool plate1on;
     private GameObject player;
+    private int trigCount;
 
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("topdownPlayer");
+        trigCount = 0;
     }
 
     // Update is called once per frame
@@ -28,12 +30,21 @@ public class pressurePlate1 : MonoBehaviour
         {
             return;
         }
+        trigCount++;
+
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
         plate1on = true;
-        GetComponent<SpriteRenderer>().sprite = plate2.GetComponent<pressurePlate2>().plateDown;
+        GetComponent<SpriteRenderer>().sprite = plate2.GetComponent<PressurePlate2>().plateDown;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         plate1on = false;
-        GetComponent<SpriteRenderer>().sprite = plate2.GetComponent<pressurePlate2>().plateUp;
+        trigCount--;
+        if(trigCount == 0)
+        {
+            GetComponent<SpriteRenderer>().sprite = plate2.GetComponent<PressurePlate2>().plateUp;
+        }
     }
 }

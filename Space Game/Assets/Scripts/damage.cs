@@ -15,7 +15,11 @@ public class damage : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+<<<<<<< HEAD
         player = GameObject.Find("platformerPlayer");
+=======
+        player = GameObject.FindGameObjectWithTag("Player");
+>>>>>>> 173b81619620fba6dee9e66e1319b25d3868149d
         playerRigidbody = player.GetComponent<Rigidbody2D>();
         healthBar = GameObject.Find("health");
     }
@@ -69,15 +73,15 @@ public class damage : MonoBehaviour
                 {
                     StartCoroutine(flinch(0, -flinchForce));
                 }
-                if (player.GetComponent<topdownMovement>().isS == true)
+                if (player.GetComponent<topdownMovement>().isS)
                 {
                     StartCoroutine(flinch(0, flinchForce));
                 }
-                if (player.GetComponent<topdownMovement>().isA == true)
+                if (player.GetComponent<topdownMovement>().isA)
                 {
                     StartCoroutine(flinch(flinchForce, 0));
                 }
-                if (player.GetComponent<topdownMovement>().isD == true)
+                if (player.GetComponent<topdownMovement>().isD)
                 {
                     StartCoroutine(flinch(-flinchForce, 0));
                 }

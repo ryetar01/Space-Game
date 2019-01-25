@@ -82,26 +82,16 @@ public class TDInputHandler : MonoBehaviour {
         }
         if (Input.GetKey("e") && isCanShoot)
         {
-<<<<<<< HEAD
-            isCanShoot = false;
-            StartCoroutine(shootTimer());
-=======
             Debug.Log("Ienum worked");
             player.GetComponent<TDBulletSpawner>().Shoot();
             StartCoroutine(ShootTimer());
->>>>>>> 385dea351cc053ed1a1814efc786f1ab9ba0f2aa
         }
     }
 
 
-<<<<<<< HEAD
-    IEnumerator shootTimer()
-    {
-=======
     IEnumerator ShootTimer()
     {
         isCanShoot = false;
->>>>>>> 385dea351cc053ed1a1814efc786f1ab9ba0f2aa
         yield return new WaitForSeconds(0.3f);
         isCanShoot = true;
     }

@@ -53,13 +53,8 @@ public class TDForwardBullet : MonoBehaviour {
         {
             if (col.gameObject.CompareTag("Enemy"))
             {
-<<<<<<< HEAD
-                //change this when enemy health becomes a thing
-                Destroy(col.gameObject);
-=======
                 col.gameObject.GetComponent<enemyHealth>().GotHit();
                 //change this when enemy health becomes a thing
->>>>>>> 385dea351cc053ed1a1814efc786f1ab9ba0f2aa
             }
             StartCoroutine(End());
         }

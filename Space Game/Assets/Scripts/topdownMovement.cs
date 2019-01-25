@@ -16,12 +16,11 @@ public class topdownMovement : MonoBehaviour {
     public GameObject player1;
     public GameObject player2;
     public float Dist;
-    private float CorrectionTimer = 1.0f;
-    public float time = 0.0f;
+    public float CorrectionTimer = 1.0f;
+    private float time = 0.0f;
 
     void Start()
     {
-        
         faceView = Resources.Load<Sprite>("Sprites/Front_Placeholder");
         sideView = Resources.Load<Sprite>("Sprites/Side_Back_Placeholder");
         backView = Resources.Load<Sprite>("Sprites/Side_Back_Placeholder");
@@ -29,9 +28,11 @@ public class topdownMovement : MonoBehaviour {
         player2 = GameObject.FindGameObjectWithTag("InactivePlayer");
         controlledplayer = player1.transform;
         otherplayer = player2.transform;
-       
-        //Countdown();
+    }
 
+    private void Awake()
+    {
+        Countdown();
     }
 
     void Update()
@@ -39,10 +40,9 @@ public class topdownMovement : MonoBehaviour {
         MoveForward(); // Player Movement
         time += Time.deltaTime;
 
-
         if (time >= CorrectionTimer)
         {
-            time = 0.0f;
+            CorrectionTimer = 0;
             Correction();
         }
 
@@ -58,14 +58,14 @@ public class topdownMovement : MonoBehaviour {
         }
     }
 
-    /*public IEnumerator Countdown()
+    public IEnumerator Countdown()
     {
         while (true)
         {
             CorrectionTimer--;
             yield return new WaitForSeconds(1);
         }
-    } */
+    }
 
     public void MoveForward()
     {
@@ -115,6 +115,6 @@ public class topdownMovement : MonoBehaviour {
     }
     public void Correction()
     {
-        print("JazzTime");
+        Debug.Log("YaLikeJazz");
     }
 }

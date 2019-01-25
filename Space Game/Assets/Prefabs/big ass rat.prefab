@@ -13,10 +13,7 @@ GameObject:
   - component: {fileID: 95052787190717240}
   - component: {fileID: 50216171147141336}
   - component: {fileID: 1991550685168913469}
-<<<<<<< HEAD
-=======
   - component: {fileID: 2122644291364850278}
->>>>>>> 385dea351cc053ed1a1814efc786f1ab9ba0f2aa
   m_Layer: 0
   m_Name: big ass rat
   m_TagString: Enemy
@@ -118,11 +115,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-<<<<<<< HEAD
-  m_Mass: 1
-=======
   m_Mass: 0.5
->>>>>>> 385dea351cc053ed1a1814efc786f1ab9ba0f2aa
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -153,12 +146,6 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-<<<<<<< HEAD
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.553602, y: 1.9913734}
-  m_EdgeRadius: 0
-=======
   m_AutoTiling: 1
   serializedVersion: 2
   m_Size: {x: 1.553602, y: 1.9913734}
@@ -176,7 +163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesHealth: 2
->>>>>>> 385dea351cc053ed1a1814efc786f1ab9ba0f2aa
 --- !u!1 &7488903110051136309
 GameObject:
   m_ObjectHideFlags: 0

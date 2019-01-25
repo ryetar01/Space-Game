@@ -12,6 +12,7 @@ public class TDForwardBullet : MonoBehaviour {
     public float bulletSpeed;
     public bool bulletGo;
     public bool vorejazz;
+    public bool shotEnemy;
 
 
     void Awake()
@@ -48,10 +49,19 @@ public class TDForwardBullet : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
 
-        if (col.gameObject != player || player2)
+        if (col.gameObject != player || col.gameObject != player2)
         {
-
+            if (col.gameObject.CompareTag("Enemy"))
+            {
+                col.gameObject.GetComponent<enemyHealth>().GotHit();
+                //change this when enemy health becomes a thing
+            }
             StartCoroutine(End());
+        }
+
+        if(col.gameObject == GameObject.FindWithTag("Enemy")){
+            shotEnemy = true;
+            Debug.Log("shot rat");
         }
     }
 

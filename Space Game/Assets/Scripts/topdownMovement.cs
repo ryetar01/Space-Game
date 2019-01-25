@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class topdownMovement : MonoBehaviour
-{
+public class topdownMovement : MonoBehaviour { 
+
     private Sprite faceView;
     private Sprite sideView;
     private Sprite backView;
@@ -10,33 +10,68 @@ public class topdownMovement : MonoBehaviour
     public bool isS;
     public bool isA;
     public bool isD;
+    public float playerSpeed; //speed player moves 
+    public Transform controlledplayer;
+    public Transform otherplayer;
+    public GameObject player1;
+    public GameObject player2;
+    public float Dist;
+    private int CorrectionTimer;
 
-
-
-    //Inspector Variables
-    private float playerSpeed = 3; //speed player moves 
-
-    private void Start()
+    void Start()
     {
         faceView = Resources.Load<Sprite>("Sprites/Front_Placeholder");
         sideView = Resources.Load<Sprite>("Sprites/Side_Back_Placeholder");
         backView = Resources.Load<Sprite>("Sprites/Side_Back_Placeholder");
-
-
+        player1 = GameObject.FindGameObjectWithTag("Player");
+        player2 = GameObject.FindGameObjectWithTag("InactivePlayer");
+        controlledplayer = player1.transform;
+        otherplayer = player2.transform;
+        CorrectionTimer = 1;
     }
+
+    private void Awake()
+    {
+        Countdown();
+    }
+
     void Update()
     {
-        moveForward(); // Player Movement
+        MoveForward(); // Player Movement
+
+        if (CorrectionTimer == 0)
+        {
+            CorrectionTimer = 1;
+            Correction();
+        }
+
+        float Dist = Vector3.SqrMagnitude(controlledplayer.position - otherplayer.position);
+        
+        if (Dist >= 1.32)
+        {
+            player2.GetComponent<topdownMovement>().playerSpeed = 3;
+        }
+        else
+        {
+            player2.GetComponent<topdownMovement>().playerSpeed = 2f;
+        }
     }
 
-    private void moveForward()
+    public IEnumerator Countdown()
+    {
+        while (true)
+        {
+            CorrectionTimer--;
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+    public void MoveForward()
     {
 
         if (GetComponent<TDInputHandler>().s == true)//Press up arrow key to move back on the Y AXIS
         {
-            //transform.rotation = Quaternion.Euler(0, 0, 0);
             transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
-            //playerSpriteRenderer.sprite = new Sprite(faceView);
             GetComponent<SpriteRenderer>().sprite = faceView;
             isS = true;
             isW = false;
@@ -47,7 +82,7 @@ public class topdownMovement : MonoBehaviour
         {
             //transform.rotation = Quaternion.Euler(0, 0, 90);
             transform.Translate(playerSpeed * Time.deltaTime, 0, 0);
-            transform.localScale = new Vector3  (3.5f, 3.5f, 1); 
+            transform.localScale = new Vector3(3.5f, 3.5f, 1);
             GetComponent<SpriteRenderer>().sprite = sideView;
             isD = true;
             isW = false;
@@ -69,12 +104,16 @@ public class topdownMovement : MonoBehaviour
             //transform.rotation = Quaternion.Euler(0, 0, 270);
             transform.Translate(-playerSpeed * Time.deltaTime, 0, 0);
             GetComponent<SpriteRenderer>().sprite = sideView;
-            transform.localScale = new Vector3 (-3.5f, 3.5f, 1);
+            transform.localScale = new Vector3(-3.5f, 3.5f, 1);
             isA = true;
             isD = false;
             isW = false;
             isS = false;
         }
 
+    }
+    public void Correction()
+    {
+        Debug.Log("YaLikeJazz");
     }
 }

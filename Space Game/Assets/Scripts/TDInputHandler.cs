@@ -16,6 +16,7 @@ public class TDInputHandler : MonoBehaviour {
     public bool playingPlayer1;
     public GameObject player;
     public GameObject player2;
+    public bool isCanShoot;
 
 
 
@@ -23,8 +24,9 @@ public class TDInputHandler : MonoBehaviour {
     void Start()
     {    
         playingPlayer1 = true;
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         player2 = GameObject.Find("Player2");
+        isCanShoot = true;
     }
 
     // Update is called once per frame
@@ -78,8 +80,21 @@ public class TDInputHandler : MonoBehaviour {
         {
             StartCoroutine(DUp());
         }
+        if (Input.GetKey("e") && isCanShoot)
+        {
+            Debug.Log("Ienum worked");
+            player.GetComponent<TDBulletSpawner>().Shoot();
+            StartCoroutine(ShootTimer());
+        }
     }
-    
+
+
+    IEnumerator ShootTimer()
+    {
+        isCanShoot = false;
+        yield return new WaitForSeconds(0.3f);
+        isCanShoot = true;
+    }
 
 
     IEnumerator WPressed()

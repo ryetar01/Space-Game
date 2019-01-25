@@ -15,7 +15,7 @@ public class damage : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("platformerPlayer");
         playerRigidbody = player.GetComponent<Rigidbody2D>();
         healthBar = GameObject.Find("health");
     }

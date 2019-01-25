@@ -22,8 +22,8 @@ public class ForwardBullets : MonoBehaviour {
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player");
-        //player2 = GameObject.Find("Player");
+        player = GameObject.FindWithTag("platformerPlayer");
+        //player2 = GameObject.Find("platformerPlayer");
         vorejazz = true;
         bulletGo = true;
     }

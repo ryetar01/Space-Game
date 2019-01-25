@@ -18,7 +18,7 @@ public class handleInput : MonoBehaviour {
     private Quaternion rotation;
     public bool invincTimer;
     public bool playingPlayer1;
-    public GameObject platformerplayer;
+    public GameObject player;
     public GameObject player2;
 
 
@@ -27,7 +27,7 @@ public class handleInput : MonoBehaviour {
     void Start () {
         isCanShoot = true;
         playingPlayer1 = true;
-        platformerplayer = GameObject.Find("platformerPlayer");
+        player = GameObject.Find("Player");
         player2 = GameObject.Find("Player2");
     }
 

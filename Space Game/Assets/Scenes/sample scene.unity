@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -167,6 +167,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 20150132395146812, guid: cf7fd94414ef8f843ad0a62016187997,
+        type: 3}
+      propertyPath: orthographic size
+      value: 4.7028656
+      objectReference: {fileID: 0}
     - target: {fileID: 114197006222769964, guid: cf7fd94414ef8f843ad0a62016187997,
         type: 3}
       propertyPath: correctMode2
@@ -216,11 +221,6 @@ PrefabInstance:
         type: 3}
       propertyPath: yOffset
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 20150132395146812, guid: cf7fd94414ef8f843ad0a62016187997,
-        type: 3}
-      propertyPath: orthographic size
-      value: 4.7028656
       objectReference: {fileID: 0}
     - target: {fileID: 4348940769760810, guid: cf7fd94414ef8f843ad0a62016187997, type: 3}
       propertyPath: m_LocalPosition.y
@@ -325,19 +325,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6af8742f05c50b14c9f7651d7b6d29c1, type: 3}
---- !u!1 &1070013799 stripped
+--- !u!1 &851040488 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1296694618946924, guid: 6645e8983fb67a04f8865f76f7b3514c,
+  m_CorrespondingSourceObject: {fileID: 1908335888965044, guid: 6af8742f05c50b14c9f7651d7b6d29c1,
     type: 3}
-  m_PrefabInstance: {fileID: 1331822171}
+  m_PrefabInstance: {fileID: 429490464}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1070013807
+--- !u!114 &851040489
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070013799}
+  m_GameObject: {fileID: 851040488}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04624d63a9b772d488a2612c6e5a0bc1, type: 3}
@@ -1123,7 +1123,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -234, y: 95}
+  m_AnchoredPosition: {x: -360, y: 140}
   m_SizeDelta: {x: 228.01, y: 106.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224995491261130481

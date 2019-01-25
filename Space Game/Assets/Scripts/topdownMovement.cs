@@ -18,6 +18,9 @@ public class topdownMovement : MonoBehaviour {
     public float Dist;
     public float CorrectionTimer = 1.0f;
     private float time = 0.0f;
+    public float MinorDistx;
+    public float MinorDisty;
+    
 
     void Start()
     {
@@ -28,6 +31,7 @@ public class topdownMovement : MonoBehaviour {
         player2 = GameObject.FindGameObjectWithTag("InactivePlayer");
         controlledplayer = player1.transform;
         otherplayer = player2.transform;
+
     }
 
     private void Awake()
@@ -39,6 +43,7 @@ public class topdownMovement : MonoBehaviour {
     {
         MoveForward(); // Player Movement
         time += Time.deltaTime;
+        
 
         if (time >= CorrectionTimer)
         {
@@ -47,6 +52,8 @@ public class topdownMovement : MonoBehaviour {
         }
 
         float Dist = Vector3.SqrMagnitude(controlledplayer.position - otherplayer.position);
+        MinorDistx = otherplayer.position.x - controlledplayer.position.x;
+        MinorDisty = otherplayer.position.y - controlledplayer.position.y;
         
         if (Dist >= 1.32)
         {
@@ -115,6 +122,47 @@ public class topdownMovement : MonoBehaviour {
     }
     public void Correction()
     {
-        Debug.Log("YaLikeJazz");
+        
+        if (MinorDistx >= -0.5 && MinorDistx < 0)
+        {
+            /*while (otherplayer.position.x != controlledplayer.position.x)
+            {
+                if (MinorDistx < 0)
+                {
+                    player2.transform.Translate(playerSpeed * Time.deltaTime, 0, 0);
+                }
+                if (MinorDistx > 0)
+                {
+                    player2.transform.Translate(-playerSpeed * Time.deltaTime, 0, 0);
+                }
+            } */
+            player2.transform.Translate(playerSpeed * Time.deltaTime / 3, 0, 0);
+        }
+
+        if (MinorDistx <= 0.5 && MinorDistx > 0)
+        {
+            player2.transform.Translate(-playerSpeed * Time.deltaTime / 3, 0, 0);
+        }
+
+        if (MinorDisty >= -0.5 && MinorDistx > 0)
+        {
+            player2.transform.Translate(0, playerSpeed * Time.deltaTime / 3, 0);
+            /* while (otherplayer.position.y != controlledplayer.position.y)
+             {
+                 if (MinorDisty < 0)
+                 {
+                     player2.transform.Translate(0, playerSpeed * Time.deltaTime, 0);
+                 }
+                 if (MinorDisty > 0)
+                 {
+                     player2.transform.Translate(0, -playerSpeed * Time.deltaTime, 0);
+                 }
+             } */
+        }
+
+        if (MinorDisty <= 0.5 && MinorDistx < 0)
+        {
+            player2.transform.Translate(0, -playerSpeed * Time.deltaTime / 3, 0);
+        }
     }
 }

@@ -15,7 +15,7 @@ public class damage : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         playerRigidbody = player.GetComponent<Rigidbody2D>();
         healthBar = GameObject.Find("health");
     }
@@ -41,11 +41,23 @@ public class damage : MonoBehaviour
     {
         if (collision.gameObject == player)
         {
-            if (player.GetComponent<handleInput>().invincTimer == false)
+            if (player.GetComponent<platformerMovement>() != null)
             {
-                healthBar.GetComponent<Health>().GotHit(enemyDamage);
-                player.GetComponent<handleInput>().invincTimer = true;
+                if (player.GetComponent<handleInput>().invincTimer == false)
+                {
+                    healthBar.GetComponent<Health>().GotHit(enemyDamage);
+                    player.GetComponent<handleInput>().invincTimer = true;
+                }
             }
+            else
+            {
+                if (player.GetComponent<TDInputHandler>().invincTimer == false)
+                {
+                    healthBar.GetComponent<Health>().GotHit(enemyDamage);
+                    player.GetComponent<TDInputHandler>().invincTimer = true;
+                }
+            }
+
 
             //checking for if the player is using platformer
             if (player.GetComponent<platformerMovement>() != null)
@@ -69,15 +81,15 @@ public class damage : MonoBehaviour
                 {
                     StartCoroutine(flinch(0, -flinchForce));
                 }
-                if (player.GetComponent<topdownMovement>().isS == true)
+                if (player.GetComponent<topdownMovement>().isS)
                 {
                     StartCoroutine(flinch(0, flinchForce));
                 }
-                if (player.GetComponent<topdownMovement>().isA == true)
+                if (player.GetComponent<topdownMovement>().isA)
                 {
                     StartCoroutine(flinch(flinchForce, 0));
                 }
-                if (player.GetComponent<topdownMovement>().isD == true)
+                if (player.GetComponent<topdownMovement>().isD)
                 {
                     StartCoroutine(flinch(-flinchForce, 0));
                 }

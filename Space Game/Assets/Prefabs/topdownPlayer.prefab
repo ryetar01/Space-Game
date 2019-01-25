@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 114767516997478376}
   - component: {fileID: 114835624925654722}
   - component: {fileID: 114017726866437464}
+  - component: {fileID: 1764038168116621773}
   m_Layer: 0
   m_Name: topdownPlayer
   m_TagString: Player
@@ -232,6 +233,12 @@ MonoBehaviour:
   isA: 0
   isD: 0
   playerSpeed: 3
+  controlledplayer: {fileID: 0}
+  otherplayer: {fileID: 0}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  Dist: 0
+  CorrectionTimer: 1
 --- !u!114 &114767516997478376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +261,7 @@ MonoBehaviour:
   playingPlayer1: 1
   player: {fileID: 1526510535656940}
   player2: {fileID: 0}
+  isCanShoot: 0
 --- !u!114 &114835624925654722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,3 +292,16 @@ MonoBehaviour:
   player: {fileID: 0}
   player2: {fileID: 0}
   playingPlayer1: 0
+--- !u!114 &1764038168116621773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526510535656940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04624d63a9b772d488a2612c6e5a0bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myHealthBar: {fileID: 0}

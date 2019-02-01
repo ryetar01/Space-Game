@@ -13,10 +13,10 @@ public class bulletdirection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("a"))
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        if (Input.GetKey("d"))
-            transform.rotation = Quaternion.Euler(180, 0, 0);
+        if (Input.GetKey(KeyCode.A))
+            transform.rotation = Quaternion.Euler(0, 0, 180);
+        if (Input.GetKey(KeyCode.D))
+            transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
 }

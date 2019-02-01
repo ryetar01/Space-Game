@@ -24,6 +24,7 @@ public class enemyHealth : MonoBehaviour
         {
             GetComponent<Animator>().SetBool("dead", true);
             Destroy(GetComponentInChildren<bigassrattopdown>()); //will need to be changed to be more adaptable
+            Destroy(GetComponent<damage>());
         }
         else
         {

@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd2114ad63d616a47a548168ea272177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flinchForce: 10
+  flinchForce: 1
   isFlinching: 0
   enemyDamage: 20
 --- !u!1 &7488903110051136309

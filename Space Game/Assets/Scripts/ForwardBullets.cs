@@ -12,6 +12,7 @@ public class ForwardBullets : MonoBehaviour {
     public float bulletSpeed;
     public bool bulletGo;
     public bool vorejazz;
+    
 
     void Awake()
     {

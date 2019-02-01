@@ -41,11 +41,23 @@ public class damage : MonoBehaviour
     {
         if (collision.gameObject == player)
         {
-            if (player.GetComponent<handleInput>().invincTimer == false)
+            if (player.GetComponent<platformerMovement>() != null)
             {
-                healthBar.GetComponent<Health>().GotHit(enemyDamage);
-                player.GetComponent<handleInput>().invincTimer = true;
+                if (player.GetComponent<handleInput>().invincTimer == false)
+                {
+                    healthBar.GetComponent<Health>().GotHit(enemyDamage);
+                    player.GetComponent<handleInput>().invincTimer = true;
+                }
             }
+            else
+            {
+                if (player.GetComponent<TDInputHandler>().invincTimer == false)
+                {
+                    healthBar.GetComponent<Health>().GotHit(enemyDamage);
+                    player.GetComponent<TDInputHandler>().invincTimer = true;
+                }
+            }
+
 
             //checking for if the player is using platformer
             if (player.GetComponent<platformerMovement>() != null)

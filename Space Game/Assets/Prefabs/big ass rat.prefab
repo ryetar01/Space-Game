@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flinchForce: 1
   isFlinching: 0
-  enemyDamage: 20
+  enemyDamage: 25
 --- !u!1 &7488903110051136309
 GameObject:
   m_ObjectHideFlags: 0

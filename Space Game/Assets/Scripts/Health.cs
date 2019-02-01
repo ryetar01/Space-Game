@@ -26,12 +26,13 @@ public class Health : MonoBehaviour {
     }
    
 
-    public void GotHit(int damage)   {
+    public void GotHit(int damage){
         myHealthBar.value -= damage;
     }
 
     IEnumerator Death()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         while (screenDarkness.alpha < 1)
         {
             screenDarkness.alpha += Time.deltaTime * 0.1f;
@@ -39,7 +40,6 @@ public class Health : MonoBehaviour {
             yield return null;
         }
         StartCoroutine(FadeIn());
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
@@ -49,7 +49,7 @@ public class Health : MonoBehaviour {
         screenDarkness.alpha = 1;
         while (screenDarkness.alpha > 0)
         {
-            screenDarkness.alpha -= Time.deltaTime;
+            screenDarkness.alpha -= Time.deltaTime * 0.5f;
             yield return null;
         }
     }

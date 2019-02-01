@@ -15,6 +15,7 @@ public class topdownMovement : MonoBehaviour {
     public Transform otherplayer;
     public GameObject player1;
     public GameObject player2;
+    public Vector2 offset;
     public float Dist;
     public float CorrectionTimer = 1.0f;
     private float time = 0.0f;
@@ -51,7 +52,9 @@ public class topdownMovement : MonoBehaviour {
             Correction();
         }
 
-        float Dist = Vector3.SqrMagnitude(controlledplayer.position - otherplayer.position);
+        offset = controlledplayer.position - otherplayer.position;
+
+        Dist = Vector3.SqrMagnitude(controlledplayer.position - otherplayer.position);
         MinorDistx = otherplayer.position.x - controlledplayer.position.x;
         MinorDisty = otherplayer.position.y - controlledplayer.position.y;
         
@@ -123,6 +126,8 @@ public class topdownMovement : MonoBehaviour {
     public void Correction()
     {
         
+
+        return;
         if (MinorDistx >= -0.5 && MinorDistx < 0)
         {
             /*while (otherplayer.position.x != controlledplayer.position.x)
@@ -136,12 +141,12 @@ public class topdownMovement : MonoBehaviour {
                     player2.transform.Translate(-playerSpeed * Time.deltaTime, 0, 0);
                 }
             } */
-            player2.transform.Translate(playerSpeed * Time.deltaTime / 3, 0, 0);
+            player2.transform.Translate(-playerSpeed * Time.deltaTime / 3, 0, 0);
         }
 
         if (MinorDistx <= 0.5 && MinorDistx > 0)
         {
-            player2.transform.Translate(-playerSpeed * Time.deltaTime / 3, 0, 0);
+            player2.transform.Translate(playerSpeed * Time.deltaTime / 3, 0, 0);
         }
 
         if (MinorDisty >= -0.5 && MinorDistx > 0)

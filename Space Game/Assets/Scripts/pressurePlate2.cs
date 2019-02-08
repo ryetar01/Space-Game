@@ -28,6 +28,9 @@ public class PressurePlate2 : MonoBehaviour
         if(plate1.GetComponent<PressurePlate1>().plate1on && plate2on)
         {
             bothPressed = true;
+            GameObject.Find("Door").GetComponent<Animator>().SetTrigger("BothPressed");
+            Destroy(GameObject.Find("Door").GetComponent<BoxCollider2D>());
+            GameObject.Find("Door").GetComponent<SpriteRenderer>().sortingOrder = 1000;
         }
     }
 

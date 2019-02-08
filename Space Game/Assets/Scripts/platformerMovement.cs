@@ -12,6 +12,7 @@ public class platformerMovement : MonoBehaviour
     private Sprite sideView;
     public bool isD;
     public bool isA;
+   
 
     private void Start()
     {
@@ -20,7 +21,7 @@ public class platformerMovement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
         player2 = GameObject.Find("Player2");
-
+        
 
     }
 
@@ -31,6 +32,7 @@ public class platformerMovement : MonoBehaviour
     {
         moveForward(); // Player Movement
     }
+    
 
     private void moveForward()
     {
@@ -64,7 +66,6 @@ public class platformerMovement : MonoBehaviour
                 Vector2 position = new Vector2(player.transform.position.x, player.transform.position.y);
                 Vector2 position2 = new Vector2(player.transform.position.x - 0.325f, player.transform.position.y);
                 Vector2 position3 = new Vector2(player.transform.position.x + 0.325f, player.transform.position.y);
-
                 Vector2 direction = Vector2.down;
                 float distance = 1;  //THIS WILL NEED TO BE ADJUSTED WITH A NEW CHARACTER MODEL!
                 RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);

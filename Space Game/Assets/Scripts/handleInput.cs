@@ -15,12 +15,14 @@ public class handleInput : MonoBehaviour {
     public bool isCanShoot;
     public bool mainPlayer;
     public Transform bulletSpawnPos;
+    public GameObject spawnposswitch;
     private Quaternion rotation;
     public bool invincTimer;
     public bool playingPlayer1;
     public GameObject player;
     public GameObject player2;
-
+    
+    
 
 
     // Use this for initialization
@@ -81,7 +83,7 @@ public class handleInput : MonoBehaviour {
             {
                 if (GetComponent<platformerMovement>().isA)
                 {
-                    rotation = Quaternion.Euler(0, 0, 180);
+                    rotation = Quaternion.Euler(0, 0, 0);
                     
                 }
                 else if(GetComponent<platformerMovement>().isD)
@@ -89,9 +91,10 @@ public class handleInput : MonoBehaviour {
                     rotation = Quaternion.Euler(0, 0, 0);
                     
                 }
-                //var bullet = Instantiate(theBullet, rotation);
+                Instantiate(theBullet, bulletSpawnPos);
                 isCanShoot = false;
                 StartCoroutine(shootTimer());
+                
             }
 
         }
@@ -161,6 +164,7 @@ public class handleInput : MonoBehaviour {
     IEnumerator shootTimer()
     {
         yield return new WaitForSeconds(0.3f);
+
         isCanShoot = true;
     }
 

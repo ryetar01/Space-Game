@@ -10,6 +10,7 @@ public class reset : MonoBehaviour
     void Start()
     {
         
+        
     }
 
     // Update is called once per frame
@@ -17,6 +18,7 @@ public class reset : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.R))
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        
         
 
     }

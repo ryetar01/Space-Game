@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class startmenu : MonoBehaviour
+public class Startmenu : MonoBehaviour
 {
     public Camera Camera1; 
     public Camera Camera2;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +18,15 @@ public class startmenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
-           Camera1.enabled = false;
-        Camera2.enabled = true;
+      
 
         
+    }
+    public void SwitchCameras()
+    {
+        Camera1.enabled = false;
+        Camera2.enabled = true;
+
+        //put all the code to switch cameras here
     }
 }

@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-public class reset : MonoBehaviour
 
+public class startmenu : MonoBehaviour
 {
-    
+    public Camera Camera1; 
+    public Camera Camera2;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +15,10 @@ public class reset : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.R))
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        if (Input.anyKeyDown)
+           Camera1.enabled = false;
+        Camera2.enabled = true;
         
-
+            
     }
 }

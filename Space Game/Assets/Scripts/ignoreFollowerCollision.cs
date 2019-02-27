@@ -9,7 +9,7 @@ public class ignoreFollowerCollision : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player2 = GameObject.Find("Player2");
+        player2 = GameObject.FindGameObjectWithTag("InactivePlayer");
         player = GameObject.Find("Player");
         StartCoroutine(MatchTransform());
     }

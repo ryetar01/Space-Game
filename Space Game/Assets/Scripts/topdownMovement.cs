@@ -58,13 +58,17 @@ public class topdownMovement : MonoBehaviour {
         MinorDistx = otherplayer.position.x - controlledplayer.position.x;
         MinorDisty = otherplayer.position.y - controlledplayer.position.y;
         
-        if (Dist >= 1.32)
+        if (Dist >= 1.32 && Dist < 3)
         {
             player2.GetComponent<topdownMovement>().playerSpeed = 3;
         }
         else
         {
             player2.GetComponent<topdownMovement>().playerSpeed = 2f;
+        }
+        if (Dist >= 3)
+        {
+            player2.GetComponent<topdownMovement>().playerSpeed = 4;
         }
     }
 
@@ -120,6 +124,11 @@ public class topdownMovement : MonoBehaviour {
             isD = false;
             isW = false;
             isS = false;
+        }
+        if (GetComponent<TDInputHandler>().z == true)
+        {
+            player2.transform.position = player1.transform.position;
+            
         }
 
     }

@@ -28,12 +28,15 @@ public class TDInputHandler : MonoBehaviour {
         playingPlayer1 = true;
         player = GameObject.FindGameObjectWithTag("topdownPlayer");
         player2 = GameObject.Find("topdownChad");
+<<<<<<< HEAD
     }
 
     public void Scanplayers()
     {
         player = GameObject.FindWithTag("Player");
         player2 = GameObject.FindWithTag("InactivePlayer");
+=======
+>>>>>>> 0ffd8b0b9bfc059204e41e54e6dfbae08b570615
     }
 
     // Update is called once per frame

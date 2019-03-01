@@ -5514,6 +5514,9 @@ MonoBehaviour:
   plate2: {fileID: 51591915}
   plate1on: 0
   bullet: {fileID: 1703732094664794, guid: d2ac5fdf2f8fe2948960281bf0248764, type: 3}
+<<<<<<< HEAD
+>>>>>>> 0ffd8b0b9bfc059204e41e54e6dfbae08b570615
+=======
 >>>>>>> 0ffd8b0b9bfc059204e41e54e6dfbae08b570615
 --- !u!61 &377246974
 BoxCollider2D:
@@ -6693,6 +6696,7 @@ MonoBehaviour:
   player1: {fileID: 0}
   player2: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   platplayer1: {fileID: 1908335888965044, guid: 6af8742f05c50b14c9f7651d7b6d29c1,
     type: 3}
   Platpoint: {x: 0, y: 0}
@@ -6701,6 +6705,8 @@ MonoBehaviour:
   TDCamera: {fileID: 1024970576}
   TDC: {fileID: 0}
 =======
+=======
+>>>>>>> 0ffd8b0b9bfc059204e41e54e6dfbae08b570615
 --- !u!1 &1224424575
 GameObject:
   m_ObjectHideFlags: 0
@@ -6827,6 +6833,9 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.2398476}
   m_EdgeRadius: 0
+<<<<<<< HEAD
+>>>>>>> 0ffd8b0b9bfc059204e41e54e6dfbae08b570615
+=======
 >>>>>>> 0ffd8b0b9bfc059204e41e54e6dfbae08b570615
 --- !u!1 &1254491083
 GameObject:

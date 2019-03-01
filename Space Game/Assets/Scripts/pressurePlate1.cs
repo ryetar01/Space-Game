@@ -9,6 +9,8 @@ public class PressurePlate1 : MonoBehaviour
     public bool plate1on;
     private GameObject player;
     private int trigCount;
+    public GameObject bullet;
+
 
 
     // Start is called before the first frame update
@@ -26,12 +28,8 @@ public class PressurePlate1 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject == GameObject.Find("TDMainCharacterBullet(Clone)"))
-        {
-            return;
-        }
+        Physics2D.IgnoreCollision(other, bullet.GetComponent<Collider2D>());
         trigCount++;
-
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

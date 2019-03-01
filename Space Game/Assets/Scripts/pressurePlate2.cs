@@ -15,13 +15,11 @@ public class PressurePlate2 : MonoBehaviour
     public GameObject bullet;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("topdownPlayer");
         trigCount = 0;
-
     }
     // Update is called once per frame
     void Update()

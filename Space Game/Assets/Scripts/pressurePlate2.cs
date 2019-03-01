@@ -12,6 +12,7 @@ public class PressurePlate2 : MonoBehaviour
     public Sprite plateDown;
     private GameObject player;
     private int trigCount;
+    public GameObject bullet;
 
 
 
@@ -30,17 +31,13 @@ public class PressurePlate2 : MonoBehaviour
             bothPressed = true;
             GameObject.Find("Door").GetComponent<Animator>().SetTrigger("BothPressed");
             Destroy(GameObject.Find("Door").GetComponent<BoxCollider2D>());
-            GameObject.Find("Door").GetComponent<SpriteRenderer>().sortingOrder = 1000;
+            GameObject.Find("Door").GetComponent<SpriteRenderer>().sortingOrder = 900;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject == GameObject.Find("TDMainCharacterBullet(Clone)"))
-        {
-            Debug.Log("nani");
-            return;
-        }
+        Physics2D.IgnoreCollision(other, bullet.GetComponent<Collider2D>());
         trigCount++;
     }
     private void OnTriggerStay2D(Collider2D collision)

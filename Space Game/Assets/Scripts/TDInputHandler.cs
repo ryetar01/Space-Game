@@ -9,6 +9,7 @@ public class TDInputHandler : MonoBehaviour {
     public bool s;
     public bool a;
     public bool d;
+    public bool z;
     public float delay;
     private bool wInputUp;
     public bool mainPlayer;
@@ -86,6 +87,10 @@ public class TDInputHandler : MonoBehaviour {
             player.GetComponent<TDBulletSpawner>().Shoot();
             StartCoroutine(ShootTimer());
         }
+        if (Input.GetKey("z"))
+        {
+            StartCoroutine(Teleport2p());
+        }
     }
 
 
@@ -95,7 +100,12 @@ public class TDInputHandler : MonoBehaviour {
         yield return new WaitForSeconds(0.3f);
         isCanShoot = true;
     }
-
+    IEnumerator Teleport2p()
+    {
+        z = true;
+        yield return new WaitForSeconds(0.3f);
+        z = false;
+    }
 
     IEnumerator WPressed()
     {
@@ -129,6 +139,7 @@ public class TDInputHandler : MonoBehaviour {
             d = false;
         }
     }
+    
 
     IEnumerator WUp()
     {

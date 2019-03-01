@@ -24,7 +24,7 @@ public class TDForwardBullet : MonoBehaviour {
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
-        //player2 = GameObject.Find("Player");
+        player2 = GameObject.Find("InactivePlayer");
         vorejazz = true;
         bulletGo = true;
     }

@@ -24,11 +24,16 @@ public class TDForwardBullet : MonoBehaviour {
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
-        player2 = GameObject.Find("InactivePlayer");
+        player2 = GameObject.FindWithTag("InactivePlayer");
         vorejazz = true;
         bulletGo = true;
     }
 
+    public void Scanplayers()
+    {
+        player = GameObject.FindWithTag("Player");
+        player2 = GameObject.Find("InactivePlayer");
+    }
 
     void Update()
     {
@@ -49,7 +54,7 @@ public class TDForwardBullet : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
 
-        if (col.gameObject != player || col.gameObject != player2)
+        if (col.gameObject != player && col.gameObject != player2)
         {
             if (col.gameObject.CompareTag("Enemy"))
             {

@@ -12,7 +12,7 @@ public class ForwardBullets : MonoBehaviour {
     public float bulletSpeed;
     public bool bulletGo;
     public bool vorejazz;
-    
+
 
     void Awake()
     {
@@ -26,6 +26,11 @@ public class ForwardBullets : MonoBehaviour {
         //player2 = GameObject.Find("Player");
         vorejazz = true;
         bulletGo = true;
+    }
+
+    public void Scanplayers()
+    {
+        player = GameObject.FindWithTag("Player");
     }
 
 

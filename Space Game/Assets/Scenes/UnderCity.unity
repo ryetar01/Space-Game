@@ -5600,9 +5600,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96c73e9e173f4d4d9c30d7dfd4917e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plate1: {fileID: 377246972}
-  plate2: {fileID: 51591915}
-  plate1on: 0
 --- !u!61 &377246974
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6758,11 +6755,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gamemode: 0
   Shift1: {fileID: 0}
-  Shift2: {fileID: 0}
   Mainactive: 1
   activeOther: 0
   player1: {fileID: 0}
   player2: {fileID: 0}
+  platplayer1: {fileID: 1908335888965044, guid: 6af8742f05c50b14c9f7651d7b6d29c1,
+    type: 3}
+  Platpoint: {x: 0, y: 0}
+  TDIH: []
+  TDM: []
+  TDCamera: {fileID: 1024970576}
+  TDC: {fileID: 0}
 --- !u!1 &1254491083
 GameObject:
   m_ObjectHideFlags: 0
@@ -6929,6 +6932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b887dc5fa36e7044aa0849834fbc2c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gmobject: {fileID: 0}
   player: {fileID: 0}
   GM: {fileID: 1186356701}
   Ppoint: {x: -1.81, y: 1.49}

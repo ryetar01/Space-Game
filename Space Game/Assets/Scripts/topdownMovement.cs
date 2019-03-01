@@ -35,6 +35,12 @@ public class topdownMovement : MonoBehaviour {
 
     }
 
+    public void Scanplayers()
+    {
+        player1 = GameObject.FindWithTag("Player");
+        player2 = GameObject.FindWithTag("InactivePlayer");
+    }
+
     private void Awake()
     {
         Countdown();

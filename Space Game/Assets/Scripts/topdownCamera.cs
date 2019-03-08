@@ -9,7 +9,11 @@ public class topdownCamera : MonoBehaviour {
 
 
     // Use this for initialization
-    
+    public void Scanplayers()
+    {
+        player = GameObject.FindWithTag("Player");
+        player2 = GameObject.FindWithTag("InactivePlayer");
+    }
 
     // Update is called once per frame
     void Update()

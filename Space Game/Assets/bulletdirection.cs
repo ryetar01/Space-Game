@@ -15,15 +15,16 @@ public class bulletdirection : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.E))
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 180);
-        }
+        if (Input.GetKeyDown(KeyCode.A))
+        
+            transform.rotation = Quaternion.Euler(0, -180, 0);
+     
+        
 
-        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.E))
-        {
+        if (Input.GetKeyDown(KeyCode.D))
+        
             transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
+        
    
        
     }
